@@ -1,0 +1,56 @@
+debug: false
+management.endpoints.web.exposure.include: "*"
+
+logging:
+  level:
+    com.wit.com.wit.unifesta: debug
+    org.springframework.web.servlet: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+spring:
+  # 데이터베이스 설정
+  datasource:
+    url: jdbc:mysql://localhost:3306/board
+    username: taeheon
+    password: rlaxogjs8312@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    driver-class-name: org.h2.Driver
+  # jpa 설정
+  jpa:
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate:
+        default_batch_fetch_size: 100
+        hbm2ddl:
+          auto: create
+    open-in-view: true
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
+  data:
+    rest:
+      base-path: /
+      detection-strategy: annotated
+---
+
+#spring:
+#  config:
+#    activate:
+#      on-profile: testdb
+#  datasource:
+#    url: jdbc:h2:mem:board;mode=mysql
+#    driver-class-name: org.h2.Driver
+#  sql:
+#    init:
+#      mode: always
+#  test.database.replace: none
+#  thymeleaf3:
+#    decoupled-logic: true
