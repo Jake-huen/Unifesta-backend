@@ -3,6 +3,7 @@ package com.wit.unifesta.controller;
 import com.wit.unifesta.domain.User;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class RESTController {
 
