@@ -33,7 +33,7 @@ spring:
         format_sql: true
   h2:
     console:
-      enabled: true
+      enabled: false
   sql:
     init:
       mode: always
@@ -41,18 +41,21 @@ spring:
     rest:
       base-path: /
       detection-strategy: annotated
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 ---
 
-spring:
-  config:
-    activate:
-      on-profile: testdb
-  datasource:
-    url: jdbc:h2:mem:board;mode=mysql
-    driver-class-name: org.h2.Driver
-  sql:
-    init:
-      mode: always
-  test.database.replace: none
+#spring:
+#  config:
+#    activate:
+#      on-profile: testdb
+#  datasource:
+#    url: jdbc:h2:mem:board;mode=mysql
+#    driver-class-name: org.h2.Driver
+#  sql:
+#    init:
+#      mode: always
+#  test.database.replace: none
 #  thymeleaf3:
 #    decoupled-logic: true

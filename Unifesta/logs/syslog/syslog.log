@@ -1,0 +1,158 @@
+[INFO ] 2023-01-04 15:58:56.216 :      c.w.u.UnifestaApplication - Starting UnifestaApplication using Java 11.0.15.1 on LAPTOP-AAHVBUG5 with PID 7800 (C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta\out\production\classes started by tae77 in C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta)
+[INFO ] 2023-01-04 15:58:56.218 :      c.w.u.UnifestaApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-01-04 15:58:56.263 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2023-01-04 15:58:56.263 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2023-01-04 15:58:57.768 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-01-04 15:58:57.850 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interfaces.
+[WARN ] 2023-01-04 15:58:58.083 : o.m.s.m.ClassPathMapperScanner - No MyBatis mapper was found in '[com.wit.unifesta]' package. Please check your configuration.
+[INFO ] 2023-01-04 15:58:58.944 :    o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2023-01-04 15:58:58.967 :      o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 15:58:58.968 :        o.a.c.c.StandardService - Starting service [Tomcat]
+[INFO ] 2023-01-04 15:58:58.969 :         o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.70]
+[INFO ] 2023-01-04 15:58:59.138 :              o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2023-01-04 15:58:59.138 : o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2872 ms
+[INFO ] 2023-01-04 15:58:59.185 :         c.z.h.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-01-04 15:58:59.607 :         c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-01-04 15:58:59.621 : o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/board'
+[INFO ] 2023-01-04 15:58:59.889 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-01-04 15:58:59.980 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+[INFO ] 2023-01-04 15:59:00.309 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2023-01-04 15:59:00.492 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2023-01-04 15:59:01.536 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-01-04 15:59:01.563 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-01-04 15:59:02.467 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - 35 mappings in 'requestMappingHandlerMapping'
+[INFO ] 2023-01-04 15:59:02.772 : o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[DEBUG] 2023-01-04 15:59:02.785 : o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[DEBUG] 2023-01-04 15:59:02.840 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+[DEBUG] 2023-01-04 15:59:02.865 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+[DEBUG] 2023-01-04 15:59:02.875 : o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+[INFO ] 2023-01-04 15:59:03.123 :      o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 15:59:03.150 :    o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2023-01-04 15:59:03.631 :      c.w.u.UnifestaApplication - Started UnifestaApplication in 8.025 seconds (JVM running for 10.044)
+[INFO ] 2023-01-04 15:59:15.698 :              o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2023-01-04 15:59:15.699 :      o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[DEBUG] 2023-01-04 15:59:15.700 :      o.s.w.s.DispatcherServlet - Detected StandardServletMultipartResolver
+[DEBUG] 2023-01-04 15:59:15.700 :      o.s.w.s.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[DEBUG] 2023-01-04 15:59:15.700 :      o.s.w.s.DispatcherServlet - Detected FixedThemeResolver
+[DEBUG] 2023-01-04 15:59:15.701 :      o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4c2f484b
+[DEBUG] 2023-01-04 15:59:15.702 :      o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@76032b4d
+[DEBUG] 2023-01-04 15:59:15.702 :      o.s.w.s.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[INFO ] 2023-01-04 15:59:15.702 :      o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+[DEBUG] 2023-01-04 15:59:15.715 :      o.s.w.s.DispatcherServlet - GET "/swagger-ui/", parameters={}
+[DEBUG] 2023-01-04 15:59:15.725 : o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+[DEBUG] 2023-01-04 15:59:15.737 : o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+[DEBUG] 2023-01-04 15:59:15.737 : o.s.w.s.v.InternalResourceView - View name 'forward:', model {}
+[DEBUG] 2023-01-04 15:59:15.739 : o.s.w.s.v.InternalResourceView - Forwarding to [/swagger-ui/index.html]
+[DEBUG] 2023-01-04 15:59:15.745 :      o.s.w.s.DispatcherServlet - "FORWARD" dispatch for GET "/swagger-ui/index.html", parameters={}
+[DEBUG] 2023-01-04 15:59:15.747 : o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+[DEBUG] 2023-01-04 15:59:15.753 :      o.s.w.s.DispatcherServlet - Exiting from "FORWARD" dispatch, status 304
+[DEBUG] 2023-01-04 15:59:15.755 :      o.s.w.s.DispatcherServlet - Completed 304 NOT_MODIFIED
+[DEBUG] 2023-01-04 15:59:15.856 :      o.s.w.s.DispatcherServlet - GET "/swagger-resources/configuration/ui", parameters={}
+[DEBUG] 2023-01-04 15:59:15.857 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+[DEBUG] 2023-01-04 15:59:15.857 :      o.s.w.s.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png?v=3.0.0", parameters={masked}
+[DEBUG] 2023-01-04 15:59:15.859 : o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+[DEBUG] 2023-01-04 15:59:15.862 :      o.s.w.s.DispatcherServlet - Completed 304 NOT_MODIFIED
+[DEBUG] 2023-01-04 15:59:15.881 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json]
+[DEBUG] 2023-01-04 15:59:15.919 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [springfox.documentation.swagger.web.UiConfiguration@67a3ed9d]
+[DEBUG] 2023-01-04 15:59:15.940 :      o.s.w.s.DispatcherServlet - Completed 200 OK
+[DEBUG] 2023-01-04 15:59:15.943 :      o.s.w.s.DispatcherServlet - GET "/swagger-resources/configuration/security", parameters={}
+[DEBUG] 2023-01-04 15:59:15.944 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+[DEBUG] 2023-01-04 15:59:15.944 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json]
+[DEBUG] 2023-01-04 15:59:15.947 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [springfox.documentation.swagger.web.SecurityConfiguration@17b8bb7a]
+[DEBUG] 2023-01-04 15:59:15.948 :      o.s.w.s.DispatcherServlet - Completed 200 OK
+[DEBUG] 2023-01-04 15:59:15.953 :      o.s.w.s.DispatcherServlet - GET "/swagger-resources", parameters={}
+[DEBUG] 2023-01-04 15:59:15.953 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+[DEBUG] 2023-01-04 15:59:15.955 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json]
+[DEBUG] 2023-01-04 15:59:15.957 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[springfox.documentation.swagger.web.SwaggerResource@5f29767f]]
+[DEBUG] 2023-01-04 15:59:15.959 :      o.s.w.s.DispatcherServlet - Completed 200 OK
+[DEBUG] 2023-01-04 15:59:15.979 :      o.s.w.s.DispatcherServlet - GET "/v3/api-docs", parameters={}
+[DEBUG] 2023-01-04 15:59:15.979 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to springfox.documentation.oas.web.OpenApiControllerWebMvc#getDocumentation(String, HttpServletRequest)
+[DEBUG] 2023-01-04 15:59:16.116 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json, application/hal+json]
+[DEBUG] 2023-01-04 15:59:16.118 : o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [springfox.documentation.spring.web.json.Json@5fa37a56]
+[DEBUG] 2023-01-04 15:59:16.122 :      o.s.w.s.DispatcherServlet - Completed 200 OK
+[INFO ] 2023-01-04 16:01:58.898 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-01-04 16:01:58.902 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-01-04 16:01:58.914 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-01-04 17:22:02.698 :      c.w.u.UnifestaApplication - Starting UnifestaApplication using Java 11.0.15.1 on LAPTOP-AAHVBUG5 with PID 29824 (C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta\out\production\classes started by tae77 in C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta)
+[INFO ] 2023-01-04 17:22:02.700 :      c.w.u.UnifestaApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-01-04 17:22:02.749 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2023-01-04 17:22:02.749 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2023-01-04 17:22:03.842 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-01-04 17:22:03.925 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interfaces.
+[WARN ] 2023-01-04 17:22:04.094 : o.m.s.m.ClassPathMapperScanner - No MyBatis mapper was found in '[com.wit.unifesta]' package. Please check your configuration.
+[INFO ] 2023-01-04 17:22:04.656 :    o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2023-01-04 17:22:04.669 :      o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 17:22:04.670 :        o.a.c.c.StandardService - Starting service [Tomcat]
+[INFO ] 2023-01-04 17:22:04.670 :         o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.70]
+[INFO ] 2023-01-04 17:22:04.785 :              o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2023-01-04 17:22:04.785 : o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2035 ms
+[INFO ] 2023-01-04 17:22:04.816 :         c.z.h.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-01-04 17:22:05.118 :         c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-01-04 17:22:05.128 : o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/board'
+[INFO ] 2023-01-04 17:22:05.301 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-01-04 17:22:05.361 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+[INFO ] 2023-01-04 17:22:05.597 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2023-01-04 17:22:05.733 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2023-01-04 17:22:06.430 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-01-04 17:22:06.440 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-01-04 17:22:07.042 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - 35 mappings in 'requestMappingHandlerMapping'
+[INFO ] 2023-01-04 17:22:07.272 : o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[DEBUG] 2023-01-04 17:22:07.280 : o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[DEBUG] 2023-01-04 17:22:07.328 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+[DEBUG] 2023-01-04 17:22:07.348 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+[DEBUG] 2023-01-04 17:22:07.354 : o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+[INFO ] 2023-01-04 17:22:07.539 :      o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 17:22:07.563 :    o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2023-01-04 17:22:07.945 :      c.w.u.UnifestaApplication - Started UnifestaApplication in 5.781 seconds (JVM running for 7.554)
+[INFO ] 2023-01-04 17:22:43.531 :              o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2023-01-04 17:22:43.532 :      o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[DEBUG] 2023-01-04 17:22:43.532 :      o.s.w.s.DispatcherServlet - Detected StandardServletMultipartResolver
+[DEBUG] 2023-01-04 17:22:43.532 :      o.s.w.s.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[DEBUG] 2023-01-04 17:22:43.532 :      o.s.w.s.DispatcherServlet - Detected FixedThemeResolver
+[DEBUG] 2023-01-04 17:22:43.533 :      o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7f41db29
+[DEBUG] 2023-01-04 17:22:43.533 :      o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1da93eb7
+[DEBUG] 2023-01-04 17:22:43.534 :      o.s.w.s.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[INFO ] 2023-01-04 17:22:43.534 :      o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+[DEBUG] 2023-01-04 17:22:43.547 :      o.s.w.s.DispatcherServlet - GET "/api/v1/get-api/hello", parameters={}
+[DEBUG] 2023-01-04 17:22:43.552 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.wit.unifesta.controller.GetController#getHello()
+[INFO ] 2023-01-04 17:22:43.564 :          c.w.u.c.GetController - getHello 메서드가 호출되었습니다.
+[DEBUG] 2023-01-04 17:22:43.577 : o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[DEBUG] 2023-01-04 17:22:43.578 : o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello World"]
+[DEBUG] 2023-01-04 17:22:43.588 :      o.s.w.s.DispatcherServlet - Completed 200 OK
+[INFO ] 2023-01-04 18:28:09.470 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-01-04 18:28:09.483 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-01-04 18:28:09.491 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2023-01-04 18:28:16.472 :      c.w.u.UnifestaApplication - Starting UnifestaApplication using Java 11.0.15.1 on LAPTOP-AAHVBUG5 with PID 27124 (C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta\out\production\classes started by tae77 in C:\Users\tae77\OneDrive\바탕 화면\Unifesta-backend\Unifesta)
+[INFO ] 2023-01-04 18:28:16.475 :      c.w.u.UnifestaApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-01-04 18:28:16.595 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2023-01-04 18:28:16.595 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2023-01-04 18:28:18.884 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2023-01-04 18:28:18.989 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interfaces.
+[WARN ] 2023-01-04 18:28:19.233 : o.m.s.m.ClassPathMapperScanner - No MyBatis mapper was found in '[com.wit.unifesta]' package. Please check your configuration.
+[INFO ] 2023-01-04 18:28:20.108 :    o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2023-01-04 18:28:20.127 :      o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 18:28:20.128 :        o.a.c.c.StandardService - Starting service [Tomcat]
+[INFO ] 2023-01-04 18:28:20.128 :         o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.70]
+[INFO ] 2023-01-04 18:28:20.325 :              o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2023-01-04 18:28:20.326 : o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3730 ms
+[INFO ] 2023-01-04 18:28:20.618 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2023-01-04 18:28:20.692 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+[INFO ] 2023-01-04 18:28:20.911 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2023-01-04 18:28:21.054 :         c.z.h.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2023-01-04 18:28:21.465 :         c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2023-01-04 18:28:21.486 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[INFO ] 2023-01-04 18:28:22.554 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2023-01-04 18:28:22.578 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2023-01-04 18:28:23.466 : o.s.w.s.m.m.a.RequestMappingHandlerMapping - 35 mappings in 'requestMappingHandlerMapping'
+[INFO ] 2023-01-04 18:28:23.770 : o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[DEBUG] 2023-01-04 18:28:23.781 : o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[DEBUG] 2023-01-04 18:28:23.837 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+[DEBUG] 2023-01-04 18:28:23.866 : o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+[DEBUG] 2023-01-04 18:28:23.878 : o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+[INFO ] 2023-01-04 18:28:24.117 :      o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2023-01-04 18:28:24.145 :    o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2023-01-04 18:28:24.687 :      c.w.u.UnifestaApplication - Started UnifestaApplication in 9.267 seconds (JVM running for 11.838)
+[WARN ] 2023-01-04 20:10:31.703 :             c.z.h.p.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h13m9s702ms273µs100ns).
+[INFO ] 2023-01-04 20:24:48.091 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2023-01-04 20:24:48.097 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2023-01-04 20:24:48.108 :         c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
