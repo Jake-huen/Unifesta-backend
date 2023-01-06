@@ -1,6 +1,6 @@
 package com.wit.unifesta.controller;
 
-import com.wit.unifesta.domain.User;
+import com.wit.unifesta.data.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -11,12 +11,10 @@ public class RESTController {
     @GetMapping("/unifesta")
     public User httpGet() {
         User findUser = User.builder()
-                .id(1)
+                .id(1L)
                 .username("taeheon")
                 .password("1234")
                 .email("tae77777@naver.com")
-                .sociallogin("kakao")
-                .likedlist("konkuk")
                 .build();
         return findUser;
     }

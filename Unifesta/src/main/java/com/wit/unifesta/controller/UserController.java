@@ -1,8 +1,8 @@
 package com.wit.unifesta.controller;
 
-import com.wit.unifesta.domain.User;
+import com.wit.unifesta.data.entity.User;
 import com.wit.unifesta.exception.UnifestaException;
-import com.wit.unifesta.persistence.UserRepository;
+import com.wit.unifesta.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 @Controller
 public class UserController {
@@ -48,7 +47,7 @@ public class UserController {
     }
 
     @GetMapping("/user/get/{id}")
-    public @ResponseBody User getUser(@PathVariable int id) throws Throwable {
+    public @ResponseBody User getUser(@PathVariable Long id) throws Throwable {
         // 특정 id(회원 번호)에 해당하는 User 객체 반환
         // 검색된 회원이 없을 경우 예외 반환
         User findUser = userRepository.findById(id).orElseThrow(() -> {
@@ -66,15 +65,13 @@ public class UserController {
         findUser.setUsername(user.getUsername());
         findUser.setPassword(user.getPassword());
         findUser.setEmail(user.getEmail());
-        findUser.setSociallogin(user.getSociallogin());
-        findUser.setLikedlist(user.getLikedlist());
 
         // userRepository.save(findUser);
         return "회원 수정 성공";
     }
 
     @DeleteMapping("/user/{id}")
-    public @ResponseBody String deleteUser(@PathVariable int id){
+    public @ResponseBody String deleteUser(@PathVariable Long id){
         userRepository.deleteById(id);
         return "회원 삭제 성공";
     }
