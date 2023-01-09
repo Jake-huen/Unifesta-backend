@@ -1,7 +1,7 @@
 package com.wit.unifesta.controller;
 
 import ch.qos.logback.classic.Logger;
-import com.wit.unifesta.dto.UserDto;
+import com.wit.unifesta.data.dto.UserDTO;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.LoggerFactory;
@@ -60,7 +60,7 @@ public class GetController {
     }
 
     @GetMapping(value = "/request3")
-    public String getRequestParam3(UserDto userDto){
+    public String getRequestParam3(UserDTO userDto){
         return userDto.toString();
     }
 }

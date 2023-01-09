@@ -1,6 +1,6 @@
 package com.wit.unifesta.controller;
 
-import com.wit.unifesta.dto.UserDto;
+import com.wit.unifesta.data.dto.UserDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -27,7 +27,7 @@ public class PostController {
 
     // DTO 사용하기
     @PostMapping(value = "/member2")
-    public String postMemberDto(@RequestBody UserDto userDto){
+    public String postMemberDto(@RequestBody UserDTO userDto){
         return userDto.toString();
     }
 }

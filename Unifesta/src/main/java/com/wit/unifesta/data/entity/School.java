@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "school")
+@Table(name = "SCHOOL")
 public class School {
 
     @Id
@@ -19,17 +19,17 @@ public class School {
 
     @Getter @Setter private String festivalCalendar; // 축제 일정
 
-    @Getter @Setter private String festivalPoster; // 축제 포스터
+    // @Getter @Setter private String festivalPoster; // 축제 포스터 TODO: 이미지 폴더 처리방법
 
     @Getter @Setter private String festivalDescription; // 축제 소개
 
-    @Getter @Setter private String lineUp; // 라인업
+    // @Getter @Setter private String lineUp; // 라인업 TODO: 라인업 테이블도 만들기
 
-    @Getter @Setter private String batchMap; // 배치도
+    // @Getter @Setter private String batchMap; // 배치도 TODO: 이미지
 
-    @Getter @Setter private String festivalReview; // 축제 후기
+    // @Getter @Setter private String festivalReview; // 축제 후기 TODO: 축제 후기 테이블
 
-    @Getter @Setter private String aroundRestaurant; // 주변맛집
+    // @Getter @Setter private String aroundRestaurant; // 주변맛집 TODO: 주변 맛집 테이블
 
     @Getter private LocalDateTime createdAt; // 만든 시간
 

@@ -1,78 +1,63 @@
 package com.wit.unifesta.controller;
 
+import com.wit.unifesta.data.dto.ChangeUserNameDTO;
+import com.wit.unifesta.data.dto.UserDTO;
+import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.data.entity.User;
 import com.wit.unifesta.exception.UnifestaException;
 import com.wit.unifesta.data.repository.UserRepository;
+import com.wit.unifesta.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserRepository userRepository;
-
-    @GetMapping("/user/unifesta")
-    public @ResponseBody String getUser() {
-        return "Success";
+    public UserController(UserService userService){
+        this.userService = userService;
     }
 
-    @GetMapping("/user/list")
-    public @ResponseBody List<User> getUserList() {
-        return userRepository.findAll();
+    @GetMapping()
+    public ResponseEntity<UserResponseDTO> getUser(Long id){
+        UserResponseDTO userResponseDTO = userService.getUser(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @GetMapping("/user/page/{page}")
-    public @ResponseBody Page<User> getUserListPaging(@PathVariable int page){
-        // page에 해당하는 2개의 데이터 조회
-        // id와 username 내림차순 정렬
-        // page는 0부터 시작
-        Pageable pageable = PageRequest.of(page,2, Sort.Direction.DESC, "id","username");
+    @PostMapping()
+    public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserDTO userDTO){
+        UserResponseDTO userResponseDTO = userService.saveUser(userDTO);
 
-        return userRepository.findAll(pageable);
+        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @PostMapping("/user")
-    public @ResponseBody String insertUser(@RequestBody User user) {
-        userRepository.save(user);
-        return user.getUsername() + " 회원가입 성공";
+    @PutMapping()
+    public ResponseEntity<UserResponseDTO> changeUserName(
+            @RequestBody ChangeUserNameDTO changeUserNameDto) throws Exception{
+        UserResponseDTO userResponseDTO = userService.changeUserName(
+                changeUserNameDto.getId(),
+                changeUserNameDto.getName());
+        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @GetMapping("/user/get/{id}")
-    public @ResponseBody User getUser(@PathVariable Long id) throws Throwable {
-        // 특정 id(회원 번호)에 해당하는 User 객체 반환
-        // 검색된 회원이 없을 경우 예외 반환
-        User findUser = userRepository.findById(id).orElseThrow(() -> {
-            return new UnifestaException(id + "번 회원이 없습니다.");
-        });
-        return findUser;
-    }
+    @DeleteMapping()
+    public ResponseEntity<String> deleteUser(Long id) throws Exception{
+        userService.deleteUser(id);
 
-    @Transactional
-    @PutMapping("/user")
-    public @ResponseBody String updateUser(@RequestBody User user) {
-        User findUser = userRepository.findById(user.getId()).orElseThrow(()->{
-            return new UnifestaException(user.getId() + "번 회원이 없습니다.");
-        });
-        findUser.setUsername(user.getUsername());
-        findUser.setPassword(user.getPassword());
-        findUser.setEmail(user.getEmail());
-
-        // userRepository.save(findUser);
-        return "회원 수정 성공";
-    }
-
-    @DeleteMapping("/user/{id}")
-    public @ResponseBody String deleteUser(@PathVariable Long id){
-        userRepository.deleteById(id);
-        return "회원 삭제 성공";
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제되었습니다.");
     }
 }

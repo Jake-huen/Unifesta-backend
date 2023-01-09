@@ -15,7 +15,7 @@ public class SchoolDAOImpl implements SchoolDAO {
     private final SchoolRepository schoolRepository;
 
     @Autowired
-    public SchoolDAOImpl(SchoolRepository schoolRepository){
+    public SchoolDAOImpl(SchoolRepository schoolRepository) {
         this.schoolRepository = schoolRepository;
     }
 
@@ -38,13 +38,13 @@ public class SchoolDAOImpl implements SchoolDAO {
         Optional<School> selectedSchool = schoolRepository.findById(number);
 
         School updatedSchool;
-        if(selectedSchool.isPresent()){ // 존재한다면 (null값이 아니라면)
+        if (selectedSchool.isPresent()) { // 존재한다면 (null값이 아니라면)
             School school = selectedSchool.get();
             school.setSchoolName(name);
             school.setUpdatedAt(LocalDateTime.now());
 
             updatedSchool = schoolRepository.save(school);
-        }else{
+        } else {
             throw new Exception();
         }
 
@@ -53,7 +53,14 @@ public class SchoolDAOImpl implements SchoolDAO {
 
     @Override
     public void deleteSchool(Long number) throws Exception {
-//        Optional<School> selectedSchool = schoolRepository
+        Optional<School> selectedSchool = schoolRepository.findById(number);
+        if (selectedSchool.isPresent()) {
+            School school = selectedSchool.get();
+            schoolRepository.delete(school);
+        } else {
+            throw new Exception();
+        }
+
     }
 
 }

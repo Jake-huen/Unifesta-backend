@@ -1,15 +1,15 @@
-package com.wit.unifesta.dto;
+package com.wit.unifesta.data.dto;
 
-public class UserDto {
+public class UserDTO {
 
-    private int id;             // 회원 일련번호
+    private Long id;             // 회원 일련번호
     private String username;    // 로그인 아이디
     private String password;    // 비밀번호
     private String email;       // 이메일
 //    private String sociallogin; // 소셜 로그인
 //    private String likedlist;   // 찜한 학교 목록
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

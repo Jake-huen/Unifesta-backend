@@ -11,4 +11,5 @@ public interface SchoolDAO {
     School updateSchoolName(Long number, String name) throws Exception;
 
     void deleteSchool(Long number) throws Exception;
+
 }

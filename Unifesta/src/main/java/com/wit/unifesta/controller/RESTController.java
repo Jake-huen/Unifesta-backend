@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.*;
 public class RESTController {
 
     // GET: SELECT
-    @GetMapping("/unifesta")
-    public User httpGet() {
-        User findUser = User.builder()
-                .id(1L)
-                .username("taeheon")
-                .password("1234")
-                .email("tae77777@naver.com")
-                .build();
-        return findUser;
-    }
+//    @GetMapping("/unifesta")
+//    public User httpGet() {
+//        User findUser = User.builder()
+//                .id(1L)
+//                .username("taeheon")
+//                .password("1234")
+//                .email("tae77777@naver.com")
+//                .build();
+//        return findUser;
+//    }
 
     // POST: INSERT
     @PostMapping("/unifesta")
