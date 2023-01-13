@@ -40,7 +40,6 @@ public class UserDAOImpl implements UserDAO {
         if(selectedUser.isPresent()){
             User user = selectedUser.get();
             user.setUsername(username);
-            user.setUpdatedAt(LocalDateTime.now());
 
             updatedUser = userRepository.save(user);
         } else{

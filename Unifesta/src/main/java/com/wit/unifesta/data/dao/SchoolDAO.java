@@ -10,6 +10,8 @@ public interface SchoolDAO {
 
     School updateSchoolName(Long number, String name) throws Exception;
 
+    School updateSchoolDescription(Long number, String description) throws Exception;
+
     void deleteSchool(Long number) throws Exception;
 
 }

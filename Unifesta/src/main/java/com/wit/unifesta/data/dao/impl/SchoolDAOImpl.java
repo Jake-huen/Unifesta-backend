@@ -28,39 +28,41 @@ public class SchoolDAOImpl implements SchoolDAO {
 
     @Override
     public School selectSchool(Long number) {
-        School selectedSchool = schoolRepository.getReferenceById(number);
+        School school = schoolRepository.getReferenceById(number);
 
-        return selectedSchool;
+        return school;
     }
 
     @Override
     public School updateSchoolName(Long number, String name) throws Exception {
         Optional<School> selectedSchool = schoolRepository.findById(number);
-
         School updatedSchool;
-        if (selectedSchool.isPresent()) { // 존재한다면 (null값이 아니라면)
+        if(selectedSchool.isPresent()){
             School school = selectedSchool.get();
             school.setSchoolName(name);
-            school.setUpdatedAt(LocalDateTime.now());
-
             updatedSchool = schoolRepository.save(school);
-        } else {
+        } else{
             throw new Exception();
         }
+        return updatedSchool;
+    }
 
+    @Override
+    public School updateSchoolDescription(Long number, String description) throws Exception {
+        Optional<School> selectedSchool = schoolRepository.findById(number);
+        School updatedSchool;
+        if(selectedSchool.isPresent()){
+            School school = selectedSchool.get();
+            school.setFestivalDescription(description);
+            updatedSchool = schoolRepository.save(school);
+        } else{
+            throw new Exception();
+        }
         return updatedSchool;
     }
 
     @Override
     public void deleteSchool(Long number) throws Exception {
-        Optional<School> selectedSchool = schoolRepository.findById(number);
-        if (selectedSchool.isPresent()) {
-            School school = selectedSchool.get();
-            schoolRepository.delete(school);
-        } else {
-            throw new Exception();
-        }
 
     }
-
 }

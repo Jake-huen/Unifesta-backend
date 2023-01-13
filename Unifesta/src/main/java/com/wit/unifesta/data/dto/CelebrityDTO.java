@@ -1,23 +1,22 @@
 package com.wit.unifesta.data.dto;
 
+import com.wit.unifesta.data.entity.School;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-    private Long id;            // 회원 일련번호
-    private String username;    // 로그인 아이디
-    private String password;    // 비밀번호
-    private String email;       // 이메일
+public class CelebrityDTO implements Serializable {
+    private Long id;
+    private Long schoolId;
+    private String singerName; // 가수 이름
+    private Long totalLiked; // 좋아요 수
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime modifiedAt;
     private String modifiedBy;
-//    private String sociallogin; // 소셜 로그인
-//    private String likedlist;   // 찜한 학교 목록
 }

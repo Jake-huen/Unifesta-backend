@@ -5,6 +5,8 @@ import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.data.entity.User;
 import com.wit.unifesta.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserDAO userDAO;
 
     @Autowired
@@ -22,8 +25,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO getUser(Long id) {
+        LOGGER.info("[getUser] input id : {}",id);
         User user = userDAO.selectUser(id);
 
+        LOGGER.info("[getUser] user id : {}, name : {}, email : {} ", user.getId(), user.getUsername(), user.getEmail());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(user.getId());
         userResponseDTO.setPassword(user.getPassword());
@@ -34,13 +39,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO saveUser(UserDTO userDTO) {
+        LOGGER.info("[saveUser] userDTO : {}", userDTO.toString());
         User user = new User();
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
-        user.setUpdatedAt(LocalDateTime.now());
 
         User savedUser = userDAO.insertUser(user);
+        LOGGER.info("[saveUser] savedUser : {}", savedUser.toString());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(savedUser.getId());
         userResponseDTO.setUsername(savedUser.getUsername());
