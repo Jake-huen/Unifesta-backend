@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class SchoolDTO {
     private long id; // 학교 아이디
     private String schoolName; // 학교 이름
-    private FestivalCalendarDTO festivalCalendarDTO; // 축제 일정
+    // private FestivalCalendarDTO festivalCalendarDTO; // 축제 일정
     private String festivalDescription; // 축제 소개
     private LocalDateTime createdAt;
     private String createdBy;

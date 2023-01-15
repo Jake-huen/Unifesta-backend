@@ -1,9 +1,9 @@
 package com.wit.unifesta.service.impl;
 
-import com.wit.unifesta.data.dao.UserDAO;
 import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.data.entity.User;
+import com.wit.unifesta.data.repository.UserRepository;
 import com.wit.unifesta.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,21 +16,22 @@ import java.time.LocalDateTime;
 public class UserServiceImpl implements UserService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-    private final UserDAO userDAO;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserDAO userDAO){
-        this.userDAO = userDAO;
+    public UserServiceImpl(UserRepository userRepository){
+        this.userRepository = userRepository;
     }
 
     @Override
     public UserResponseDTO getUser(Long id) {
         LOGGER.info("[getUser] input id : {}",id);
-        User user = userDAO.selectUser(id);
+        User user = userRepository.getReferenceById(id);
 
         LOGGER.info("[getUser] user id : {}, name : {}, email : {} ", user.getId(), user.getUsername(), user.getEmail());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(user.getId());
+        userResponseDTO.setUsername(user.getUsername());
         userResponseDTO.setPassword(user.getPassword());
         userResponseDTO.setEmail(user.getEmail());
 
@@ -45,7 +46,7 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
 
-        User savedUser = userDAO.insertUser(user);
+        User savedUser = userRepository.save(user);
         LOGGER.info("[saveUser] savedUser : {}", savedUser.toString());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(savedUser.getId());
@@ -58,7 +59,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO changeUserName(Long id, String username) throws Exception {
-        User changedUser = userDAO.updateUserName(id,username);
+        User changedUser = userRepository.getReferenceById(id);
 
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(changedUser.getId());
@@ -71,6 +72,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) throws Exception {
-        userDAO.deleteUser(id);
+        User user = userRepository.getReferenceById(id);
+        userRepository.delete(user);
     }
 }

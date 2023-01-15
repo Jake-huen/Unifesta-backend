@@ -1,16 +1,20 @@
 package com.wit.unifesta.data.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
+@ToString
 public class FestivalCalendar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "festivalCalendar_id")
     private Long Id;
 
 //    @OneToOne

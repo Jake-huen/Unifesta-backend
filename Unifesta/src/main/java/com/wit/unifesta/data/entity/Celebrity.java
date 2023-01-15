@@ -10,8 +10,9 @@ import java.util.Objects;
 
 @Entity
 @Getter
-@ToString(callSuper = true)
-@Table(name = "Celebrity")
+@Table(indexes = {
+        @Index(columnList = "singerName")
+})
 public class Celebrity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class CelebrityDTO implements Serializable {
     private Long id;
-    private Long schoolId;
+    // private Long schoolId;
     private String singerName; // 가수 이름
     private Long totalLiked; // 좋아요 수
     private LocalDateTime createdAt;

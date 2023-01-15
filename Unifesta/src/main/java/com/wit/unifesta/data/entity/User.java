@@ -4,6 +4,8 @@ package com.wit.unifesta.data.entity;
 import lombok.*;
 import org.apache.ibatis.annotations.One;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -26,8 +28,10 @@ public class User {
 
     @Setter @Column(nullable = false, length = 100) private String email; // 이메일
 
+    @CreatedDate
     @Setter private LocalDateTime createdAt; // 만든 시간
 
+    @LastModifiedDate
     @Setter private LocalDateTime updatedAt; // 업데이트 시간
 
     // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
@@ -35,8 +39,17 @@ public class User {
 //    @OneToMany(mappedBy = "user")
 //    private List<School> school;   // 찜한 학교 목록 TODO: 나중에 School Table로 바꿔주기
 
+    public User(){}
 
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
+    public static User of(String username, String password, String email) {
+        return new User(username,password,email);
+    }
 
     @Override
     public boolean equals(Object o) {
