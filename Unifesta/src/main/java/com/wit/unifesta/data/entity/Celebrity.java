@@ -3,17 +3,18 @@ package com.wit.unifesta.data.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Entity
 @Getter
 @Table(indexes = {
         @Index(columnList = "singerName")
 })
-public class Celebrity  {
+@Entity
+public class Celebrity extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,10 +24,6 @@ public class Celebrity  {
     @Setter private String singerName; // 가수 이름
 
     @Setter private Long totalLiked; // 좋아요 수
-
-    @Setter private LocalDateTime createdAt; // 만든 시간
-
-    @Setter private LocalDateTime updatedAt; // 업데이트 시간
     // 가수 이미지
 
     // 좋아요 한 사람

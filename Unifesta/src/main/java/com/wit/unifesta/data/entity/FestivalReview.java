@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,8 +16,9 @@ import java.util.Objects;
 @Table(indexes = {
         @Index(columnList = "reviewContent")
 })
+@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class FestivalReview {
+public class FestivalReview extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +30,6 @@ public class FestivalReview {
     @Setter private String reviewContent;
 
     @Setter private int likedCount;
-
-    @CreatedDate
-    @Setter private LocalDateTime createdAt; // 만든 시간
-    @LastModifiedDate
-    @Setter private LocalDateTime updatedAt; // 업데이트 시간
 
     public FestivalReview(){} //protected
 

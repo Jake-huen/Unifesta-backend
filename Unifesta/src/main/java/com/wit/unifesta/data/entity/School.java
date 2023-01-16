@@ -3,6 +3,7 @@ package com.wit.unifesta.data.entity;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -18,13 +19,13 @@ import java.util.Set;
         @Index(columnList = "festivalDescription")
 })
 @Entity
-public class School {
+public class School extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 학교 아이디
 
-    @Setter @Column(nullable = false) private String schoolName; // 학교 이름
+    @Setter @Column(nullable = false, length = 2000) private String schoolName; // 학교 이름
     @Setter private String festivalDescription; // 축제 소개
 
     @OneToOne
@@ -34,9 +35,6 @@ public class School {
     @OneToMany(mappedBy = "school")
     @ToString.Exclude
     @Setter private final Set<FestivalReview> festivalReviews = new LinkedHashSet<>(); // 축제 후기 TODO: 축제 후기 테이블
-
-    @CreatedDate @Setter private LocalDateTime createdAt; // 만든 시간
-    @LastModifiedDate @Setter private LocalDateTime updatedAt; // 업데이트 시간
 
     public School() {
     }

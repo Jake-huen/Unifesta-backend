@@ -3,14 +3,15 @@ package com.wit.unifesta.data.entity;
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @ToString
-public class FestivalCalendar {
+@Entity
+public class FestivalCalendar extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +33,4 @@ public class FestivalCalendar {
     private String addressName; // 주소
 
     private String subway; // 지하철
-
-    private LocalDateTime createdAt; // 만든 시간
-
-    private LocalDateTime updatedAt; // 업데이트 시간
 }

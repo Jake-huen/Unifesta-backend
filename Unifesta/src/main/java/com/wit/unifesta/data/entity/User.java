@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -14,8 +15,9 @@ import java.util.Objects;
 
 @Getter
 @ToString
+@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class User {
+public class User extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;             // 회원 일련번호
@@ -25,12 +27,6 @@ public class User {
     @Setter @Column(nullable = false) private String password; // 비밀번호
 
     @Setter @Column(nullable = false, length = 100) private String email; // 이메일
-
-    @CreatedDate
-    @Setter private LocalDateTime createdAt; // 만든 시간
-
-    @LastModifiedDate
-    @Setter private LocalDateTime updatedAt; // 업데이트 시간
 
     // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
 
