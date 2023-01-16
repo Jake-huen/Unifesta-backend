@@ -2,7 +2,6 @@ package com.wit.unifesta.data.entity;
 
 
 import lombok.*;
-import org.apache.ibatis.annotations.One;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,7 +15,6 @@ import java.util.Objects;
 @Getter
 @ToString
 @Entity
-@Table(name="USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

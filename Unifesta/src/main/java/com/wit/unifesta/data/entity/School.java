@@ -15,8 +15,7 @@ import java.util.Set;
 @ToString
 @Table(indexes = {
         @Index(columnList = "schoolName"),
-        @Index(columnList = "festivalDescription"),
-        @Index(columnList = "createdAt")
+        @Index(columnList = "festivalDescription")
 })
 @Entity
 public class School {
@@ -25,33 +24,20 @@ public class School {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 학교 아이디
 
-    @Setter private String schoolName; // 학교 이름
+    @Setter @Column(nullable = false) private String schoolName; // 학교 이름
+    @Setter private String festivalDescription; // 축제 소개
 
     @OneToOne
     @JoinColumn(name = "festivalCalendar_id")
     private FestivalCalendar festivalCalendar; // 축제 일정
 
-    @Setter private String festivalDescription; // 축제 소개
-
-//    @ToString.Exclude
-//    @OneToMany(mappedBy = "school")
-//    private Set<Celebrity> celebrities = new LinkedHashSet<>(); // 라인업
-
-    // @Getter @Setter private String festivalPoster; // 축제 포스터 TODO: 이미지
-
-    // @Getter @Setter private String batchMap; // 배치도 TODO: 이미지
-
     @OneToMany(mappedBy = "school")
     @ToString.Exclude
     @Setter private final Set<FestivalReview> festivalReviews = new LinkedHashSet<>(); // 축제 후기 TODO: 축제 후기 테이블
 
-    // N:M?
-    // @Getter @Setter private String aroundRestaurant; // 주변맛집 TODO: 주변 맛집 테이블
+    @CreatedDate @Setter private LocalDateTime createdAt; // 만든 시간
+    @LastModifiedDate @Setter private LocalDateTime updatedAt; // 업데이트 시간
 
-    @CreatedDate
-    @Setter private LocalDateTime createdAt; // 만든 시간
-    @LastModifiedDate
-    @Setter private LocalDateTime updatedAt; // 업데이트 시간
     public School() {
     }
 
@@ -66,7 +52,6 @@ public class School {
     }
 
     // 독특한 방법으로 equals, hashcode 만듬
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,7 +59,6 @@ public class School {
         School school = (School) o;
         return id!=null && id.equals(school.id);
     }
-    // pattern matching?
     @Override
     public int hashCode() {
         return Objects.hash(id);

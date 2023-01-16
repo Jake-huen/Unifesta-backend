@@ -20,9 +20,8 @@ spring:
   # jpa 설정
   jpa:
     defer-datasource-initialization: true
-    open-in-view: true
-    database-platform:
-      org.hibernate.dialect.MySQL5InnoDBDialect
+#    database-platform:
+#      org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     hibernate:
       naming:
@@ -53,11 +52,11 @@ spring:
     activate:
       on-profile: testdb
   datasource:
-    url: jdbc:h2:mem:unifesta;mode=mysql
+    url: jdbc:h2:mem:~;mode=mysql
     driver-class-name: org.h2.Driver
   sql:
     init:
       mode: always
-  test.database.replace: none
-  thymeleaf3:
-    decoupled-logic: true
+#  test.database.replace: none
+#  thymeleaf3:
+#    decoupled-logic: true

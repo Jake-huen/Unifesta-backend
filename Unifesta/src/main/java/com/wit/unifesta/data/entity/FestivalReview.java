@@ -22,7 +22,8 @@ public class FestivalReview {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false) private School school;
+    @Setter @ManyToOne(optional = false)
+    private School school;
 
     @Setter private String reviewContent;
 

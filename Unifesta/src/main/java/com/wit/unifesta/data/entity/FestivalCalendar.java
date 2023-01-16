@@ -15,13 +15,12 @@ public class FestivalCalendar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "festivalCalendar_id")
-    private Long Id;
+    private Long id;
 
 //    @OneToOne
 //    @JoinColumn(name = "school")
 //    private School school;
 
-    @Column(nullable = false)
     private String totalDate; // 전체 일정
 
     private String morningTime; // 낮 프로그램
