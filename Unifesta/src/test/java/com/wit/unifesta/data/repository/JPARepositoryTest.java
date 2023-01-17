@@ -77,4 +77,16 @@ class JPARepositoryTest {
         assertThat(festivalReviewRepository.count()).isEqualTo(previousFestivalReviewCount-deletedFestivalReviewSize);
 
     }
+
+    @DisplayName("JPA Auditing Test")
+    @Test
+    public void auditingTest(){
+        School school = new School();
+        school.setSchoolName("건국대학교");
+        school.setFestivalDescription("10월 화장실");
+
+        School savedSchool = schoolRepository.save(school);
+
+        System.out.println("createdAt : "+savedSchool.getCreatedAt());
+    }
 }
