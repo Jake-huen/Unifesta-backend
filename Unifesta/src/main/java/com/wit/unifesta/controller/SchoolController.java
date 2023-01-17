@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/school")
 public class SchoolController {
@@ -21,7 +21,7 @@ public class SchoolController {
     }
 
     @GetMapping()
-    public ResponseEntity<SchoolDTO> getSchool(Long id){
+    public ResponseEntity<SchoolDTO> getSchool(@RequestParam("id") Long id){
         SchoolDTO schoolDTO = schoolService.getSchool(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(schoolDTO);
