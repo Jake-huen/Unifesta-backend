@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,16 +23,21 @@ public class User extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;             // 회원 일련번호
 
-    @Setter @Column(nullable = false, length = 50) private String username; // 로그인 아이디
+    @Setter private String username; // 로그인 아이디
 
-    @Setter @Column(nullable = false) private String password; // 비밀번호
+    @Setter private String password; // 비밀번호
 
-    @Setter @Column(nullable = false, length = 100) private String email; // 이메일
+    @Setter private String email; // 이메일
 
     // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
 
-//    @OneToMany(mappedBy = "user")
-//    private List<School> school;   // 찜한 학교 목록 TODO: 나중에 School Table로 바꿔주기
+    @ManyToMany
+    @ToString.Exclude
+    private List<School> schools = new ArrayList<>();
+
+    public void addSchool(School school){
+        schools.add(school);
+    }
 
     public User(){}
 
