@@ -7,6 +7,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -19,7 +21,9 @@ public class Celebrity extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // @Setter @ManyToOne private School schoolId; // 학교 정보
+    @Setter @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="celebrity_id")
+    private List<School> schools = new ArrayList<>();
 
     @Setter private String singerName; // 가수 이름
 

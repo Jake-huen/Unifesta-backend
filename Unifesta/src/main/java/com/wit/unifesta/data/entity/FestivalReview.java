@@ -24,7 +24,10 @@ public class FestivalReview extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false)
+    @Setter
+    @ToString.Exclude
+    @JoinColumn(name = "school_id")
+    @ManyToOne(optional = false)
     private School school;
 
     @Setter private String reviewContent;

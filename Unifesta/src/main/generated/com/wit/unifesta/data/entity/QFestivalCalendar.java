@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -16,6 +17,8 @@ import com.querydsl.core.types.Path;
 public class QFestivalCalendar extends EntityPathBase<FestivalCalendar> {
 
     private static final long serialVersionUID = 1269823201L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QFestivalCalendar festivalCalendar = new QFestivalCalendar("festivalCalendar");
 
@@ -34,6 +37,8 @@ public class QFestivalCalendar extends EntityPathBase<FestivalCalendar> {
 
     public final StringPath performanceTime = createString("performanceTime");
 
+    public final QSchool school;
+
     public final StringPath subway = createString("subway");
 
     public final StringPath totalDate = createString("totalDate");
@@ -42,15 +47,24 @@ public class QFestivalCalendar extends EntityPathBase<FestivalCalendar> {
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QFestivalCalendar(String variable) {
-        super(FestivalCalendar.class, forVariable(variable));
+        this(FestivalCalendar.class, forVariable(variable), INITS);
     }
 
     public QFestivalCalendar(Path<? extends FestivalCalendar> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QFestivalCalendar(PathMetadata metadata) {
-        super(FestivalCalendar.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QFestivalCalendar(PathMetadata metadata, PathInits inits) {
+        this(FestivalCalendar.class, metadata, inits);
+    }
+
+    public QFestivalCalendar(Class<? extends FestivalCalendar> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.school = inits.isInitialized("school") ? new QSchool(forProperty("school"), inits.get("school")) : null;
     }
 
 }

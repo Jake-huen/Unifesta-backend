@@ -7,10 +7,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @ToString
@@ -26,27 +23,28 @@ public class School extends AuditingFields {
     private Long id; // 학교 아이디
 
     @Setter @Column(nullable = false, length = 2000) private String schoolName; // 학교 이름
+
     @Setter private String festivalDescription; // 축제 소개
 
-    @OneToOne
-    @JoinColumn(name = "festivalCalendar_id")
-    private FestivalCalendar festivalCalendar; // 축제 일정
-
-    @OneToMany(mappedBy = "school")
+    @OneToOne(mappedBy = "school")
     @ToString.Exclude
-    @Setter private final Set<FestivalReview> festivalReviews = new LinkedHashSet<>(); // 축제 후기 TODO: 축제 후기 테이블
+    @Setter private FestivalCalendar festivalCalendar; // 축제 일정
+
+    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
+    @ToString.Exclude @Setter
+    private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기 TODO: 축제 후기 테이블
 
     public School() {
     }
 
-    public School(String schoolName, FestivalCalendar festivalCalendar, String festivalDescription) {
+    public School(String schoolName, FestivalCalendar festivalCalendar,String festivalDescription) {
         this.schoolName = schoolName;
         this.festivalCalendar = festivalCalendar;
         this.festivalDescription = festivalDescription;
     }
 
     public static School of(String schoolName, FestivalCalendar festivalCalendar, String festivalDescription) {
-        return new School(schoolName,festivalCalendar,festivalDescription);
+        return new School(schoolName,festivalCalendar, festivalDescription);
     }
 
     // 독특한 방법으로 equals, hashcode 만듬

@@ -31,7 +31,7 @@ public class QSchool extends EntityPathBase<School> {
 
     public final StringPath festivalDescription = createString("festivalDescription");
 
-    public final SetPath<FestivalReview, QFestivalReview> festivalReviews = this.<FestivalReview, QFestivalReview>createSet("festivalReviews", FestivalReview.class, QFestivalReview.class, PathInits.DIRECT2);
+    public final ListPath<FestivalReview, QFestivalReview> festivalReviewList = this.<FestivalReview, QFestivalReview>createList("festivalReviewList", FestivalReview.class, QFestivalReview.class, PathInits.DIRECT2);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -58,7 +58,7 @@ public class QSchool extends EntityPathBase<School> {
 
     public QSchool(Class<? extends School> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.festivalCalendar = inits.isInitialized("festivalCalendar") ? new QFestivalCalendar(forProperty("festivalCalendar")) : null;
+        this.festivalCalendar = inits.isInitialized("festivalCalendar") ? new QFestivalCalendar(forProperty("festivalCalendar"), inits.get("festivalCalendar")) : null;
     }
 
 }
