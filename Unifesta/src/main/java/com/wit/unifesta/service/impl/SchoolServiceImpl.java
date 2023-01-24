@@ -7,14 +7,26 @@ import com.wit.unifesta.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SchoolServiceImpl implements SchoolService {
 
     private final SchoolRepository schoolRepository;
 
     @Autowired
-    public SchoolServiceImpl(SchoolRepository schoolRepository){
+    public SchoolServiceImpl(SchoolRepository schoolRepository) {
         this.schoolRepository = schoolRepository;
+    }
+
+    @Override
+    public List<School> getAllSchool() {
+        List<School> schools = schoolRepository.findAll();
+        List<SchoolDTO> schoolDTOS;
+//        for (int i = 0; i < schools.size(); i++) {
+//            SchoolDTO schoolDTO = new SchoolDTO(schools.get(i).getId(), schools.get(i).getSchoolName(), schools.get(i).getFestivalDescription(), schools.get(i).getCreatedAt(), schools.get(i).getCreatedBy());
+//        }
+        return schools;
     }
 
     @Override

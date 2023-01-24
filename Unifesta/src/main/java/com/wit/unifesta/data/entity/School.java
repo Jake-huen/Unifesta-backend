@@ -24,7 +24,7 @@ public class School extends AuditingFields {
 
     @Setter @Column(nullable = false, length = 2000) private String schoolName; // 학교 이름
 
-    @Setter private String festivalDescription; // 축제 소개
+    @Setter @Column(length = 1000) private String festivalDescription; // 축제 소개
 
     @OneToOne(mappedBy = "school")
     @ToString.Exclude

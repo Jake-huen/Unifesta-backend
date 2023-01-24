@@ -8,6 +8,10 @@ public interface FestivalCalendarService {
 
     FestivalCalendarDTO saveFestivalCalendar(FestivalCalendarDTO festivalCalendarDTO);
 
+    FestivalCalendarDTO getFestivalCalendarBySchoolId(Long id);
+
+    Long getLeftDate(Long id);
+
     void deleteFestivalCalendar(Long id) throws Exception;
 
 }

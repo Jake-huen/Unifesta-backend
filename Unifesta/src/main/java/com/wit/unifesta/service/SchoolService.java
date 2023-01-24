@@ -1,9 +1,13 @@
 package com.wit.unifesta.service;
 
 import com.wit.unifesta.data.dto.SchoolDTO;
+import com.wit.unifesta.data.entity.School;
+
+import java.util.List;
 
 public interface SchoolService {
 
+    List<School> getAllSchool();
     SchoolDTO getSchool(Long id);
 
     SchoolDTO saveSchool(SchoolDTO schoolDTO);

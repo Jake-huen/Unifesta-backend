@@ -20,6 +20,11 @@ public class SchoolController {
         this.schoolService = schoolService;
     }
 
+//    @GetMapping()
+//    public ResponseEntity<SchoolDTO> getSchool(){
+//        SchoolDTO schoolDTO = schoolService.getAllSchool();
+//    }
+
     @GetMapping()
     public ResponseEntity<SchoolDTO> getSchool(@RequestParam("id") Long id){
         SchoolDTO schoolDTO = schoolService.getSchool(id);
