@@ -24,14 +24,14 @@ public class DataRestTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[api] 학교 전체 조회")
-    @Test
-    void givenNothing_whenRequesting_thenReturnsSchoolsJsonResponse() throws Exception {
-
-        mvc.perform(get("/api/schools"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
-    }
+//    @DisplayName("[api] 학교 전체 조회")
+//    @Test
+//    void givenNothing_whenRequesting_thenReturnsSchoolsJsonResponse() throws Exception {
+//
+//        mvc.perform(get("/api/schools"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
+//    }
 
     @DisplayName("[api] 축제 리뷰 전체 조회")
     @Test

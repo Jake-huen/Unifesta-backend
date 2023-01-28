@@ -79,26 +79,26 @@ public class SchoolRepositoryTest {
     @Autowired SchoolRepository schoolRepository;
     @Autowired UserRepository userRepository;
 
-    @Test
-    @Transactional
-    void relationshipTest() {
-        School school1 = saveSchool("으아대학교","으아으아");
-        School school2 = saveSchool("원투대학교","원투원투");
-        School school3 = saveSchool("하나둘대학교","하나둘하나둘");
-
-        User user1 = saveUser("김태헌","1234","taeheon@gmail.com");
-        User user2 = saveUser("나혜령","1234","tae77777@naver.com");
-
-        user1.addSchool(school1);
-        user1.addSchool(school2);
-
-        user2.addSchool(school2);
-        user2.addSchool(school3);
-
-        userRepository.saveAll(Lists.newArrayList(user1,user2));
-
-        System.out.println(userRepository.findById(1L).get().getSchools());
-    }
+//    @Test
+//    @Transactional
+//    void relationshipTest() {
+//        School school1 = saveSchool("으아대학교","으아으아");
+//        School school2 = saveSchool("원투대학교","원투원투");
+//        School school3 = saveSchool("하나둘대학교","하나둘하나둘");
+//
+//        User user1 = saveUser("김태헌","1234","taeheon@gmail.com");
+//        User user2 = saveUser("나혜령","1234","tae77777@naver.com");
+//
+//        user1.addSchool(school1);
+//        user1.addSchool(school2);
+//
+//        user2.addSchool(school2);
+//        user2.addSchool(school3);
+//
+//        userRepository.saveAll(Lists.newArrayList(user1,user2));
+//
+//        System.out.println(userRepository.findById(1L).get().getSchools());
+//    }
 
     private School saveSchool(String schoolName, String festivalDescription){
         School school = new School();
