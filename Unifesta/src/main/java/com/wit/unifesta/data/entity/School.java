@@ -31,7 +31,7 @@ public class School extends AuditingFields {
     @Setter private FestivalCalendar festivalCalendar; // 축제 일정
 
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
-    @ToString.Exclude @Setter
+    @ToString.Exclude
     private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기 TODO: 축제 후기 테이블
 
     public School() {

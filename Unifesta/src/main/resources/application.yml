@@ -1,6 +1,10 @@
 debug: false
 management.endpoints.web.exposure.include: "*"
 
+# 서버 설정
+server:
+  port: 5000
+
 logging:
   level:
     com.wit.com.wit.unifesta: debug
