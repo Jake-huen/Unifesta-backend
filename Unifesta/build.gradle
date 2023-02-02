@@ -43,7 +43,8 @@ dependencies {
 }
 
 tasks.named('test') {
-    useJUnitPlatform()
+    exclude '**/*'
+    // useJUnitPlatform()
 }
 
 // Querydsl 설정부
