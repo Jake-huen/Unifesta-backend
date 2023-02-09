@@ -22,11 +22,12 @@ public class FestivalReview extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "FESTIVALREVIEW_ID")
     private Long id;
 
     @Setter
     @ToString.Exclude
-    @JoinColumn(name = "school_id")
+    @JoinColumn(name = "SCHOOL_ID")
     @ManyToOne(optional = false)
     private School school;
 

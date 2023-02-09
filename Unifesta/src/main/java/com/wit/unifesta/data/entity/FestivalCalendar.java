@@ -17,11 +17,11 @@ public class FestivalCalendar extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "festivalCalendar_id")
+    @Column(name = "FESTIVALCALENDAR_ID")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "school")
+    @JoinColumn(name = "SCHOOL")
     @Setter private School school;
 
     @Setter private String totalDate; // 전체 일정

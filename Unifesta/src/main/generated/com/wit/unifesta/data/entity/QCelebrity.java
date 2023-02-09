@@ -29,6 +29,8 @@ public class QCelebrity extends EntityPathBase<Celebrity> {
 
     public final ListPath<School, QSchool> schools = this.<School, QSchool>createList("schools", School.class, QSchool.class, PathInits.DIRECT2);
 
+    public final StringPath singerImage = createString("singerImage");
+
     public final StringPath singerName = createString("singerName");
 
     public final NumberPath<Long> totalLiked = createNumber("totalLiked", Long.class);

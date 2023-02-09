@@ -21,6 +21,7 @@ import java.util.Objects;
 public class User extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
     private Long id;             // 회원 일련번호
 
     @Setter private String username; // 로그인 아이디
@@ -33,11 +34,8 @@ public class User extends AuditingFields {
 
     @ManyToMany
     @ToString.Exclude
+    @Column(length = 100)
     private List<School> schools = new ArrayList<>();
-
-    public void addSchool(School school){
-        schools.add(school);
-    }
 
     public User(){}
 

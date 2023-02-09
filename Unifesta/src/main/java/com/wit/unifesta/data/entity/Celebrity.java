@@ -19,17 +19,22 @@ import java.util.Objects;
 public class Celebrity extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CELEBRITY_ID")
     private Long id;
 
-    @Setter @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="celebrity_id")
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CELEBRITY_ID")
     private List<School> schools = new ArrayList<>();
 
-    @Setter private String singerName; // 가수 이름
+    @Setter
+    private String singerName; // 가수 이름
 
-    @Setter private Long totalLiked; // 좋아요 수
-    // 가수 이미지
+    @Setter
+    private Long totalLiked; // 좋아요 수
 
+    @Setter
+    private String singerImage; // 가수 이미지
     // 좋아요 한 사람
 
 

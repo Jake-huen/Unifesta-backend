@@ -40,6 +40,8 @@ public class QSchool extends EntityPathBase<School> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
+    public final QUser user;
+
     public QSchool(String variable) {
         this(School.class, forVariable(variable), INITS);
     }
@@ -59,6 +61,7 @@ public class QSchool extends EntityPathBase<School> {
     public QSchool(Class<? extends School> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.festivalCalendar = inits.isInitialized("festivalCalendar") ? new QFestivalCalendar(forProperty("festivalCalendar"), inits.get("festivalCalendar")) : null;
+        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }
 
 }
