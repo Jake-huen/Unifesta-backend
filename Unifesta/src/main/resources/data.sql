@@ -1,4 +1,7 @@
-
+insert into user (username, password, email) values
+                    ('김태헌','123123','taehuen7757@gmail.com'),
+                    ('나혜령','123123','skgPfud@gmail.com')
+;
 
 
 insert into school (schoolName,festivalDescription) values

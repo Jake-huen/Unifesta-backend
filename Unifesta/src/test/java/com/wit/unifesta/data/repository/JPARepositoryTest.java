@@ -86,7 +86,5 @@ class JPARepositoryTest {
         school.setFestivalDescription("10월 화장실");
 
         School savedSchool = schoolRepository.save(school);
-
-        System.out.println("createdAt : "+savedSchool.getCreatedAt());
     }
 }

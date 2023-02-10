@@ -22,12 +22,7 @@ public class QFestivalCalendar extends EntityPathBase<FestivalCalendar> {
 
     public static final QFestivalCalendar festivalCalendar = new QFestivalCalendar("festivalCalendar");
 
-    public final QAuditingFields _super = new QAuditingFields(this);
-
     public final StringPath addressName = createString("addressName");
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final StringPath eveningTime = createString("eveningTime");
 
@@ -42,9 +37,6 @@ public class QFestivalCalendar extends EntityPathBase<FestivalCalendar> {
     public final StringPath subway = createString("subway");
 
     public final StringPath totalDate = createString("totalDate");
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QFestivalCalendar(String variable) {
         this(FestivalCalendar.class, forVariable(variable), INITS);

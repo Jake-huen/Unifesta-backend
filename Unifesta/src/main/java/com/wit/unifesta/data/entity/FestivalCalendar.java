@@ -13,7 +13,7 @@ import java.util.Objects;
 @Getter
 @ToString
 @Entity
-public class FestivalCalendar extends AuditingFields {
+public class FestivalCalendar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

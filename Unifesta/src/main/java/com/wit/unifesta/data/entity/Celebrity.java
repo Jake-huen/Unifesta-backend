@@ -16,7 +16,7 @@ import java.util.Objects;
         @Index(columnList = "singerName")
 })
 @Entity
-public class Celebrity extends AuditingFields {
+public class Celebrity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CELEBRITY_ID")

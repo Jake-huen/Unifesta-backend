@@ -16,14 +16,17 @@ import java.util.Objects;
 @Table(indexes = {
         @Index(columnList = "reviewContent")
 })
-@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class FestivalReview extends AuditingFields {
+public class FestivalReview {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "FESTIVALREVIEW_ID")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private User user;
 
     @Setter
     @ToString.Exclude

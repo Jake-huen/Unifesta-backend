@@ -16,11 +16,9 @@ import java.util.Objects;
 
 @Getter
 @ToString
-@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class User extends AuditingFields {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class User {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
     private Long id;             // 회원 일련번호
 
@@ -32,10 +30,11 @@ public class User extends AuditingFields {
 
     // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
 
-    @ManyToMany
-    @ToString.Exclude
-    @Column(length = 100)
-    private List<School> schools = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<UserSchool> userSchools = new ArrayList<UserSchool>();
+
+    @OneToMany(mappedBy = "user")
+    private List<FestivalReview> festivalReviews = new ArrayList<FestivalReview>();
 
     public User(){}
 

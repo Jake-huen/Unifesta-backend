@@ -22,11 +22,6 @@ public class QSchool extends EntityPathBase<School> {
 
     public static final QSchool school = new QSchool("school");
 
-    public final QAuditingFields _super = new QAuditingFields(this);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
-
     public final QFestivalCalendar festivalCalendar;
 
     public final StringPath festivalDescription = createString("festivalDescription");
@@ -36,11 +31,6 @@ public class QSchool extends EntityPathBase<School> {
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath schoolName = createString("schoolName");
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
-
-    public final QUser user;
 
     public QSchool(String variable) {
         this(School.class, forVariable(variable), INITS);
@@ -61,7 +51,6 @@ public class QSchool extends EntityPathBase<School> {
     public QSchool(Class<? extends School> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.festivalCalendar = inits.isInitialized("festivalCalendar") ? new QFestivalCalendar(forProperty("festivalCalendar"), inits.get("festivalCalendar")) : null;
-        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }
 
 }

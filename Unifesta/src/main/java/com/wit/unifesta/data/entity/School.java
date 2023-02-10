@@ -16,16 +16,15 @@ import java.util.*;
         @Index(columnList = "festivalDescription")
 })
 @Entity
-public class School extends AuditingFields {
+public class School {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SCHOOL_ID")
     private Long id; // 학교 아이디
 
     @Setter @Column(nullable = false, length = 100) private String schoolName; // 학교 이름
 
-    @Setter @Column(length = 1000) private String festivalDescription; // 축제 소개
+    @Setter @Column(length = 500) private String festivalDescription; // 축제 소개
 
     @OneToOne(mappedBy = "school")
     @ToString.Exclude
@@ -34,9 +33,6 @@ public class School extends AuditingFields {
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
     @ToString.Exclude
     private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기 TODO: 축제 후기 테이블
-
-    @ManyToOne
-    private User user;
 
     public School() {
     }

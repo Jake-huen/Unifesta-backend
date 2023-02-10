@@ -20,11 +20,6 @@ public class QCelebrity extends EntityPathBase<Celebrity> {
 
     public static final QCelebrity celebrity = new QCelebrity("celebrity");
 
-    public final QAuditingFields _super = new QAuditingFields(this);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
-
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final ListPath<School, QSchool> schools = this.<School, QSchool>createList("schools", School.class, QSchool.class, PathInits.DIRECT2);
@@ -34,9 +29,6 @@ public class QCelebrity extends EntityPathBase<Celebrity> {
     public final StringPath singerName = createString("singerName");
 
     public final NumberPath<Long> totalLiked = createNumber("totalLiked", Long.class);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QCelebrity(String variable) {
         super(Celebrity.class, forVariable(variable));

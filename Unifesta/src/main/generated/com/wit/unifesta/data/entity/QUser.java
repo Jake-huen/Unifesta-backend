@@ -20,23 +20,17 @@ public class QUser extends EntityPathBase<User> {
 
     public static final QUser user = new QUser("user");
 
-    public final QAuditingFields _super = new QAuditingFields(this);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
-
     public final StringPath email = createString("email");
+
+    public final ListPath<FestivalReview, QFestivalReview> festivalReviews = this.<FestivalReview, QFestivalReview>createList("festivalReviews", FestivalReview.class, QFestivalReview.class, PathInits.DIRECT2);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath password = createString("password");
 
-    public final ListPath<School, QSchool> schools = this.<School, QSchool>createList("schools", School.class, QSchool.class, PathInits.DIRECT2);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
-
     public final StringPath username = createString("username");
+
+    public final ListPath<UserSchool, QUserSchool> userSchools = this.<UserSchool, QUserSchool>createList("userSchools", UserSchool.class, QUserSchool.class, PathInits.DIRECT2);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));
