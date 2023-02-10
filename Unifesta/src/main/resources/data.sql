@@ -1,8 +1,8 @@
-insert into user (username, password, email) values
+
+insert into `user` (username, password, email) values
                     ('김태헌','123123','taehuen7757@gmail.com'),
                     ('나혜령','123123','skgPfud@gmail.com')
 ;
-
 
 insert into school (schoolName,festivalDescription) values
                     ('건국대학교','2022 통합축제 녹색지대 ''綠色地帶'' : 멈춰있던 우리, 바로시작 REBOOT
@@ -12,8 +12,28 @@ insert into school (schoolName,festivalDescription) values
                     ('한양대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.')
 ;
 
+insert into userschool (USER_ID, SCHOOL_ID, likedCount) values
+                    (1,1,0),
+                    (2,3,0),
+                    (2,3,0)
+;
+
 insert into festivalcalendar (addressName, eveningTime, morningTime, performanceTime, subway, totalDate, school) values
                     ('서울시 광진구 능동로 120','18:00 ~ 01:00','09:00 ~ 18:00','18:00 ~ ','2,7','2022.10.26(수)~28(금)',1),
                     ('서울특별시 동대문구 경희대로 26','18:00 ~ 23:00','10:00 ~ 17:00','18:00 ~ 22:00','1','2022.09.28(수)~30(금)',2),
                     ('서울특별시 성동구 왕십리로 222','18:00~24:00','10:00~17:00','16:00~22:00','2','2022.10.05(수)~7(금)',3)
+;
+
+insert into celebrity (singerName, singerImage, totalLiked) values
+                    ('10cm', 'image.png', 1),
+                    ('예빛', 'image.png', 100)
+;
+
+insert into schoolcelebrity (CELEBRITY_ID, SCHOOL_ID) values
+                    (1,1),
+                    (1,2)
+;
+
+insert into festivalreview (SCHOOL_ID, USER_ID, reviewContent, likedCount) values
+                (1,1,'와 개쩐다', 0)
 ;
