@@ -9,29 +9,28 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Getter
-@ToString
+@Data
 @Table(indexes = {
         @Index(columnList = "schoolName"),
         @Index(columnList = "festivalDescription")
 })
 @Entity
 public class School {
-
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SCHOOL_ID")
     private Long id; // 학교 아이디
 
-    @Setter @Column(nullable = false, length = 100) private String schoolName; // 학교 이름
+    @Column(nullable = false, length = 100) private String schoolName; // 학교 이름
 
-    @Setter @Column(length = 500) private String festivalDescription; // 축제 소개
+    @Column(length = 500) private String festivalDescription; // 축제 소개
+
+    @OneToMany(mappedBy = "school")
+    private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>();
 
     @OneToOne(mappedBy = "school")
-    @ToString.Exclude
-    @Setter private FestivalCalendar festivalCalendar; // 축제 일정
+    private FestivalCalendar festivalCalendar; // 축제 일정
 
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
-    @ToString.Exclude
     private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기 TODO: 축제 후기 테이블
 
     public School() {

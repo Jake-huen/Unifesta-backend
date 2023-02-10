@@ -30,6 +30,8 @@ public class QSchool extends EntityPathBase<School> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final ListPath<SchoolCelebrity, QSchoolCelebrity> schoolCelebrities = this.<SchoolCelebrity, QSchoolCelebrity>createList("schoolCelebrities", SchoolCelebrity.class, QSchoolCelebrity.class, PathInits.DIRECT2);
+
     public final StringPath schoolName = createString("schoolName");
 
     public QSchool(String variable) {

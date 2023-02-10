@@ -14,19 +14,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
-@ToString
+@Data
 @Entity
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
     private Long id;             // 회원 일련번호
 
-    @Setter private String username; // 로그인 아이디
+    private String username; // 로그인 아이디
 
-    @Setter private String password; // 비밀번호
+    private String password; // 비밀번호
 
-    @Setter private String email; // 이메일
+    private String email; // 이메일
 
     // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
 

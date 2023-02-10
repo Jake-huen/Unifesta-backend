@@ -10,8 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Getter
-@ToString
+@Data
 @Entity
 public class FestivalCalendar {
 
@@ -22,19 +21,19 @@ public class FestivalCalendar {
 
     @OneToOne
     @JoinColumn(name = "SCHOOL")
-    @Setter private School school;
+    private School school;
 
-    @Setter private String totalDate; // 전체 일정
+    private String totalDate; // 전체 일정
 
-    @Setter private String morningTime; // 낮 프로그램
+    private String morningTime; // 낮 프로그램
 
-    @Setter private String eveningTime; // 저녁주점
+    private String eveningTime; // 저녁주점
 
-    @Setter private String performanceTime; // 공연
+    private String performanceTime; // 공연
 
-    @Setter private String addressName; // 주소
+    private String addressName; // 주소
 
-    @Setter private String subway; // 지하철
+    private String subway; // 지하철
 
     public FestivalCalendar(){}
 

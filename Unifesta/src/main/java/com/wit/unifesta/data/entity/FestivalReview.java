@@ -1,5 +1,6 @@
 package com.wit.unifesta.data.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,8 +12,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Getter
-@ToString
+@Data
 @Table(indexes = {
         @Index(columnList = "reviewContent")
 })
@@ -28,15 +28,14 @@ public class FestivalReview {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @Setter
-    @ToString.Exclude
+
     @JoinColumn(name = "SCHOOL_ID")
     @ManyToOne(optional = false)
     private School school;
 
-    @Setter private String reviewContent;
+    private String reviewContent;
 
-    @Setter private int likedCount;
+    private int likedCount;
 
     public FestivalReview(){} //protected
 

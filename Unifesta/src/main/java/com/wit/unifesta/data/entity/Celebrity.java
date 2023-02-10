@@ -1,5 +1,6 @@
 package com.wit.unifesta.data.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
+@Data
 @Table(indexes = {
         @Index(columnList = "singerName")
 })
@@ -22,18 +23,14 @@ public class Celebrity {
     @Column(name = "CELEBRITY_ID")
     private Long id;
 
-    @Setter
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "CELEBRITY_ID")
-    private List<School> schools = new ArrayList<>();
+    @OneToMany(mappedBy = "celebrity")
+    private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>();
 
-    @Setter
+
     private String singerName; // 가수 이름
 
-    @Setter
     private Long totalLiked; // 좋아요 수
 
-    @Setter
     private String singerImage; // 가수 이미지
     // 좋아요 한 사람
 
