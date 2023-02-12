@@ -44,7 +44,7 @@ class JPARepositoryTest {
     @Test
     void givenTestData_whenInserting_thenWorksFine() {
         long previousCount = schoolRepository.count();
-        School school = School.of("성신여대",null,"성신여대 축제");
+        School school = School.of("성신여대",null,"image.png","성신여대 축제");
 
         School savedSchool = schoolRepository.save(school);
 

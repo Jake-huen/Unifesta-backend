@@ -26,6 +26,8 @@ public class QSchool extends EntityPathBase<School> {
 
     public final StringPath festivalDescription = createString("festivalDescription");
 
+    public final StringPath festivalPoster = createString("festivalPoster");
+
     public final ListPath<FestivalReview, QFestivalReview> festivalReviewList = this.<FestivalReview, QFestivalReview>createList("festivalReviewList", FestivalReview.class, QFestivalReview.class, PathInits.DIRECT2);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);

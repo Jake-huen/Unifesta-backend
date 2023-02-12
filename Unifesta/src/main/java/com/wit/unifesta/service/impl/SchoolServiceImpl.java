@@ -1,12 +1,15 @@
 package com.wit.unifesta.service.impl;
 
+import com.wit.unifesta.data.dto.FestivalCalendarDTO;
 import com.wit.unifesta.data.dto.SchoolDTO;
+import com.wit.unifesta.data.entity.FestivalCalendar;
 import com.wit.unifesta.data.entity.School;
 import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,13 +23,14 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
-    public List<School> getAllSchool() {
+    public List<SchoolDTO> getAllSchool() {
         List<School> schools = schoolRepository.findAll();
-        List<SchoolDTO> schoolDTOS;
-//        for (int i = 0; i < schools.size(); i++) {
-//            SchoolDTO schoolDTO = new SchoolDTO(schools.get(i).getId(), schools.get(i).getSchoolName(), schools.get(i).getFestivalDescription(), schools.get(i).getCreatedAt(), schools.get(i).getCreatedBy());
-//        }
-        return schools;
+        List<SchoolDTO> schoolDTOS = new ArrayList<>();
+        for (int i = 0; i < schools.size(); i++) {
+            SchoolDTO schoolDTO = new SchoolDTO(schools.get(i).getId(), schools.get(i).getSchoolName(), schools.get(i).getFestivalDescription());
+            schoolDTOS.add(schoolDTO);
+        }
+        return schoolDTOS;
     }
 
     @Override
@@ -36,9 +40,35 @@ public class SchoolServiceImpl implements SchoolService {
         SchoolDTO schoolDTO = new SchoolDTO();
         schoolDTO.setId(school.getId());
         schoolDTO.setSchoolName(school.getSchoolName());
-        // schoolDTO.setFestivalCalendarDTO(school.getFestivalCalendar());
+        schoolDTO.setFestivalPoster(school.getFestivalPoster());
         schoolDTO.setFestivalDescription(school.getFestivalDescription());
         return schoolDTO;
+    }
+
+    @Override
+    public SchoolDTO getSchoolBySchoolName(String schoolName) {
+        School school = schoolRepository.findBySchoolName(schoolName);
+
+        SchoolDTO schoolDTO = new SchoolDTO();
+        schoolDTO.setId(school.getId());
+        schoolDTO.setSchoolName(school.getSchoolName());
+        schoolDTO.setFestivalPoster(school.getFestivalPoster());
+        schoolDTO.setFestivalDescription(school.getFestivalDescription());
+        return schoolDTO;
+    }
+
+    @Override
+    public FestivalCalendarDTO getSchoolFestivalCalendar(String schoolName) {
+        School school = schoolRepository.findBySchoolName(schoolName);
+        FestivalCalendar festivalCalendar = school.getFestivalCalendar();
+        FestivalCalendarDTO festivalCalendarDTO = new FestivalCalendarDTO();
+        festivalCalendarDTO.setMorningTime(festivalCalendar.getMorningTime());
+        festivalCalendarDTO.setEveningTime(festivalCalendar.getEveningTime());
+        festivalCalendarDTO.setAddress(festivalCalendar.getAddressName());
+        festivalCalendarDTO.setSubway(festivalCalendar.getSubway());
+        festivalCalendarDTO.setTotalDate(festivalCalendar.getTotalDate());
+        festivalCalendarDTO.setPerformanceTime(festivalCalendar.getPerformanceTime());
+        return festivalCalendarDTO;
     }
 
     @Override
@@ -51,6 +81,7 @@ public class SchoolServiceImpl implements SchoolService {
         SchoolDTO schoolDTO1 = new SchoolDTO();
         schoolDTO1.setId(savedSchool.getId());
         schoolDTO1.setSchoolName(savedSchool.getSchoolName());
+        schoolDTO1.setFestivalPoster(savedSchool.getFestivalPoster());
         schoolDTO1.setFestivalDescription(savedSchool.getFestivalDescription());
 
         return schoolDTO1;

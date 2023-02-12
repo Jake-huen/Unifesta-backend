@@ -25,25 +25,28 @@ public class School {
     @Column(length = 500) private String festivalDescription; // 축제 소개
 
     @OneToMany(mappedBy = "school")
-    private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>();
+    private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>(); // 학교 연예인들
 
     @OneToOne(mappedBy = "school")
     private FestivalCalendar festivalCalendar; // 축제 일정
 
+    @Column(length = 500) private String festivalPoster; // 축제 포스터
+
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
-    private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기 TODO: 축제 후기 테이블
+    private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기
 
     public School() {
     }
 
-    public School(String schoolName, FestivalCalendar festivalCalendar,String festivalDescription) {
+    public School(String schoolName, FestivalCalendar festivalCalendar,String festivalPoster, String festivalDescription) {
         this.schoolName = schoolName;
         this.festivalCalendar = festivalCalendar;
+        this.festivalPoster = festivalPoster;
         this.festivalDescription = festivalDescription;
     }
 
-    public static School of(String schoolName, FestivalCalendar festivalCalendar, String festivalDescription) {
-        return new School(schoolName,festivalCalendar, festivalDescription);
+    public static School of(String schoolName, FestivalCalendar festivalCalendar, String festivalPoster, String festivalDescription) {
+        return new School(schoolName, festivalCalendar, festivalPoster, festivalDescription);
     }
 
     // 독특한 방법으로 equals, hashcode 만듬
