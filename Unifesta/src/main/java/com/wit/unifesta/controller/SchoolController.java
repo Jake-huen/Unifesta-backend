@@ -26,26 +26,34 @@ public class SchoolController {
         this.festivalCalendarService = festivalCalendarService;
     }
 
-    @GetMapping()
+    @GetMapping()// 학교 이름으로 조회
     public ResponseEntity<SchoolDTO> getSchoolByName(@RequestParam("name") String name){
         SchoolDTO schoolDTO = schoolService.getSchoolBySchoolName(name);
 
         return ResponseEntity.status(HttpStatus.OK).body(schoolDTO);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/all") // 모든 학교 조회
     public ResponseEntity<List<SchoolDTO>> getAllSchool(){
         List<SchoolDTO> schoolDTOS = schoolService.getAllSchool();
         return ResponseEntity.status(HttpStatus.OK).body(schoolDTOS);
     }
 
-    @GetMapping("/festivalCalendar")
+    @GetMapping("/festivalCalendar") // 축제 일정 조회
     public ResponseEntity<FestivalCalendarDTO> getSchoolFestivalCalendar(@RequestParam("name") String name){
         FestivalCalendarDTO festivalCalendarDTO = schoolService.getSchoolFestivalCalendar(name);
         return ResponseEntity.status(HttpStatus.OK).body(festivalCalendarDTO);
     }
 
-    @PostMapping()
+    @GetMapping("/festivalCalendar/Dday")
+    public ResponseEntity<Long> getLeftDate(@RequestParam("name") String schoolname){
+        SchoolDTO schoolDTO = schoolService.getSchoolBySchoolName(schoolname);
+        Long leftDate = festivalCalendarService.getLeftDate(schoolDTO.getId());
+
+        return ResponseEntity.status(HttpStatus.OK).body(leftDate);
+    }
+
+    @PostMapping()// 학교 생성
     public ResponseEntity<SchoolDTO> createSchool(@RequestBody SchoolDTO schoolDTO){
         SchoolDTO schoolDTO1 = schoolService.saveSchool(schoolDTO);
 

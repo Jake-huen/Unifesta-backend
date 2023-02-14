@@ -8,6 +8,7 @@ import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public SchoolDTO getSchoolBySchoolName(String schoolName) {
-        School school = schoolRepository.findBySchoolName(schoolName);
+        School school = schoolRepository.findBySchoolName(schoolName).orElseThrow();
 
         SchoolDTO schoolDTO = new SchoolDTO();
         schoolDTO.setId(school.getId());
@@ -59,7 +60,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public FestivalCalendarDTO getSchoolFestivalCalendar(String schoolName) {
-        School school = schoolRepository.findBySchoolName(schoolName);
+        School school = schoolRepository.findBySchoolName(schoolName).orElseThrow();
         FestivalCalendar festivalCalendar = school.getFestivalCalendar();
         FestivalCalendarDTO festivalCalendarDTO = new FestivalCalendarDTO();
         festivalCalendarDTO.setMorningTime(festivalCalendar.getMorningTime());
@@ -72,6 +73,7 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
+    @Transactional
     public SchoolDTO saveSchool(SchoolDTO schoolDTO) {
         School school = new School();
         school.setSchoolName(schoolDTO.getSchoolName());
@@ -88,6 +90,7 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
+    @Transactional
     public SchoolDTO changeSchoolName(Long id, String schoolName) throws Exception {
         School school = schoolRepository.getReferenceById(id);
 
@@ -99,6 +102,7 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
+    @Transactional
     public SchoolDTO changeFestivalDescription(Long id, String festivalDescription) throws Exception {
         School school = schoolRepository.getReferenceById(id);
 
@@ -110,6 +114,7 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
+    @Transactional
     public void deleteSchool(Long id) throws Exception {
         School school = schoolRepository.getReferenceById(id);
         schoolRepository.delete(school);

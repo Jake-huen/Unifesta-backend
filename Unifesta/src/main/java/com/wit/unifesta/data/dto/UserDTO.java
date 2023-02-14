@@ -14,10 +14,6 @@ public class UserDTO {
     private String username;    // 로그인 아이디
     private String password;    // 비밀번호
     private String email;       // 이메일
-    private LocalDateTime createdAt;
-    private String createdBy;
-    private LocalDateTime modifiedAt;
-    private String modifiedBy;
 //    private String sociallogin; // 소셜 로그인
 //    private String likedlist;   // 찜한 학교 목록
 }

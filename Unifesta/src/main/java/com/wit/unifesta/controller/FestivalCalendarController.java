@@ -26,11 +26,11 @@ public class FestivalCalendarController {
         return ResponseEntity.status(HttpStatus.OK).body(festivalCalendarDTO);
     }
 
-    @GetMapping("/Dday")
-    public ResponseEntity<Long> getLeftDate(@RequestParam("id") Long id){
-        Long leftDate = festivalCalendarService.getLeftDate(id);
-
-        return ResponseEntity.status(HttpStatus.OK).body(leftDate);
-    }
+//    @GetMapping("/Dday")
+//    public ResponseEntity<Long> getLeftDate(@RequestParam("schoolname") String schoolname){
+//        Long leftDate = festivalCalendarService.getLeftDate(schoolname);
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(leftDate);
+//    }
 
 }
