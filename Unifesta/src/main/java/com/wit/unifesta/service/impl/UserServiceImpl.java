@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -39,6 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserResponseDTO saveUser(UserDTO userDTO) {
         LOGGER.info("[saveUser] userDTO : {}", userDTO.toString());
         User user = new User();
@@ -58,6 +60,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserResponseDTO changeUserName(Long id, String username) throws Exception {
         User changedUser = userRepository.getReferenceById(id);
 
@@ -71,6 +74,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
+    public UserResponseDTO updateUser(UserDTO userDTO) {
+        User changeUser = userRepository.getReferenceById(userDTO.getId());
+        UserResponseDTO userResponseDTO = new UserResponseDTO();
+        userResponseDTO.setUsername(userDTO.getUsername());
+        userResponseDTO.setEmail(userDTO.getEmail());
+        userResponseDTO.setPassword(userDTO.getPassword());
+        return userResponseDTO;
+    }
+
+    @Override
+    @Transactional
     public void deleteUser(Long id) throws Exception {
         User user = userRepository.getReferenceById(id);
         userRepository.delete(user);

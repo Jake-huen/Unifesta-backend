@@ -32,7 +32,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping() // id로 유저 조회
     public ResponseEntity<UserResponseDTO> getUser(Long id){
         UserResponseDTO userResponseDTO = userService.getUser(id);
 
@@ -46,12 +46,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
+
+
     @PutMapping()
-    public ResponseEntity<UserResponseDTO> changeUserName(
-            @RequestBody ChangeUserNameDTO changeUserNameDto) throws Exception{
-        UserResponseDTO userResponseDTO = userService.changeUserName(
-                changeUserNameDto.getId(),
-                changeUserNameDto.getName());
+    public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserDTO UserDTO) throws Exception{
+        UserResponseDTO userResponseDTO = userService.updateUser(new UserDTO());
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
