@@ -13,9 +13,6 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Data
-@Table(indexes = {
-        @Index(columnList = "reviewContent")
-})
 @Entity
 public class FestivalReview {
 
@@ -33,20 +30,23 @@ public class FestivalReview {
     @ManyToOne(optional = false)
     private School school;
 
-    private String reviewContent;
+    @Column(length = 1000) private String reviewContent;
 
     private int likedCount;
 
+    private String year;
+
     public FestivalReview(){} //protected
 
-    public FestivalReview(School school, String reviewContent, int likedCount) {
+    public FestivalReview(School school, String reviewContent, int likedCount,String year) {
         this.school = school;
         this.reviewContent = reviewContent;
         this.likedCount = likedCount;
+        this.year = year;
     }
 
-    public static FestivalReview of(School school, String reviewContent, int likedCount) {
-        return new FestivalReview(school,reviewContent,likedCount);
+    public static FestivalReview of(School school, String reviewContent, int likedCount, String year) {
+        return new FestivalReview(school,reviewContent,likedCount,year);
     }
 
     @Override

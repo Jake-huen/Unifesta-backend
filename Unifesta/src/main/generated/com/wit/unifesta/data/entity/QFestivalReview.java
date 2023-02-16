@@ -32,6 +32,8 @@ public class QFestivalReview extends EntityPathBase<FestivalReview> {
 
     public final QUser user;
 
+    public final StringPath year = createString("year");
+
     public QFestivalReview(String variable) {
         this(FestivalReview.class, forVariable(variable), INITS);
     }
