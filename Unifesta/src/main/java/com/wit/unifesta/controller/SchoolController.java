@@ -2,8 +2,10 @@ package com.wit.unifesta.controller;
 
 import com.wit.unifesta.data.dto.CelebrityDTO;
 import com.wit.unifesta.data.dto.FestivalCalendarDTO;
+import com.wit.unifesta.data.dto.FestivalReviewDTO;
 import com.wit.unifesta.data.dto.SchoolDTO;
 import com.wit.unifesta.service.FestivalCalendarService;
+import com.wit.unifesta.service.FestivalReviewService;
 import com.wit.unifesta.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,11 +22,13 @@ public class SchoolController {
 
     private final SchoolService schoolService;
     private final FestivalCalendarService festivalCalendarService;
+    private final FestivalReviewService festivalReviewService;
 
     @Autowired
-    public SchoolController(SchoolService schoolService, FestivalCalendarService festivalCalendarService){
+    public SchoolController(SchoolService schoolService, FestivalCalendarService festivalCalendarService,FestivalReviewService festivalReviewService){
         this.schoolService = schoolService;
         this.festivalCalendarService = festivalCalendarService;
+        this.festivalReviewService = festivalReviewService;
     }
 
     @GetMapping()// 학교 이름으로 조회
@@ -65,5 +69,12 @@ public class SchoolController {
         SchoolDTO schoolDTO1 = schoolService.saveSchool(schoolDTO);
 
         return ResponseEntity.status(HttpStatus.OK).body(schoolDTO1);
+    }
+
+    @GetMapping("/festivalReview")
+    public ResponseEntity<List<FestivalReviewDTO>> getSchoolFestivalReviews(@RequestParam("name") String schoolname){
+        List<FestivalReviewDTO> festivalReviewDTOS = festivalReviewService.festivalReview(schoolname);
+
+        return ResponseEntity.status(HttpStatus.OK).body(festivalReviewDTOS);
     }
 }
