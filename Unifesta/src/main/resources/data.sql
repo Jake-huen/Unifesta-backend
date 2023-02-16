@@ -31,7 +31,9 @@ insert into Celebrity (singerName, singerImage, totalLiked) values
                     ('다이나믹듀오','https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.blog.naver.com%2Fbkh4443%2F221401959538&psig=AOvVaw1dznLm-Ik9YwtozsbwsyVs&ust=1676268654367000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPjJt7-pj_0CFQAAAAAdAAAAABAE',10),
                     ('비비','https://www.google.com/url?sa=i&url=https%3A%2F%2Fmobile.newsis.com%2Fview.html%3Far_id%3DNISX20221118_0002091664&psig=AOvVaw15gacvdx0tNdGAX9z0Fh5K&ust=1676268668404000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDLhcapj_0CFQAAAAAdAAAAABAE',10),
                     ('비와이','',10),
-                    ('악동뮤지션','',10)
+                    ('악동뮤지션','',10),
+                    ('현아','',100),
+                    ('보라미유','',100)
 ;
 
 insert into SchoolCelebrity (CELEBRITY_ID, SCHOOL_ID) values
@@ -40,7 +42,9 @@ insert into SchoolCelebrity (CELEBRITY_ID, SCHOOL_ID) values
                     (3,1),
                     (4,1),
                     (5,1),
-                    (6,1)
+                    (6,1),
+                    (7,2),
+                    (8,2)
 ;
 
 insert into FestivalReview (SCHOOL_ID, USER_ID, reviewContent, likedCount) values

@@ -14,6 +14,7 @@ public class CelebrityDTO implements Serializable {
     private Long id;
     private String singerName; // 가수 이름
     private Long totalLiked; // 좋아요 수
+    private String singerImage;
 //    private LocalDateTime createdAt;
 //    private String createdBy;
 //    private LocalDateTime modifiedAt;

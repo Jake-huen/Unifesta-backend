@@ -49,6 +49,11 @@ public class School {
         return new School(schoolName, festivalCalendar, festivalPoster, festivalDescription);
     }
 
+    public School(Long id, String schoolName){
+        this.id = id;
+        this.schoolName = schoolName;
+    }
+
     // 독특한 방법으로 equals, hashcode 만듬
     @Override
     public boolean equals(Object o) {

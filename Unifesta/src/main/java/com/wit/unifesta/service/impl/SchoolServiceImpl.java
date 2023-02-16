@@ -1,9 +1,13 @@
 package com.wit.unifesta.service.impl;
 
+import com.wit.unifesta.data.dto.CelebrityDTO;
 import com.wit.unifesta.data.dto.FestivalCalendarDTO;
 import com.wit.unifesta.data.dto.SchoolDTO;
+import com.wit.unifesta.data.entity.Celebrity;
 import com.wit.unifesta.data.entity.FestivalCalendar;
 import com.wit.unifesta.data.entity.School;
+import com.wit.unifesta.data.entity.SchoolCelebrity;
+import com.wit.unifesta.data.repository.SchoolCelebrityRepository;
 import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +21,12 @@ import java.util.List;
 public class SchoolServiceImpl implements SchoolService {
 
     private final SchoolRepository schoolRepository;
+    private final SchoolCelebrityRepository schoolCelebrityRepository;
 
     @Autowired
-    public SchoolServiceImpl(SchoolRepository schoolRepository) {
+    public SchoolServiceImpl(SchoolRepository schoolRepository, SchoolCelebrityRepository schoolCelebrityRepository) {
         this.schoolRepository = schoolRepository;
+        this.schoolCelebrityRepository = schoolCelebrityRepository;
     }
 
     @Override
@@ -111,6 +117,20 @@ public class SchoolServiceImpl implements SchoolService {
         schoolDTO.setSchoolName(schoolDTO.getSchoolName());
 
         return schoolDTO;
+    }
+
+    @Override
+    @Transactional
+    public List<CelebrityDTO> getAllSchoolCelebrities(String schoolName) {
+        Long findId = schoolRepository.findBySchoolName(schoolName).get().getId();
+        List<SchoolCelebrity> celebrities = schoolCelebrityRepository.findBySchool_Id(findId);
+        List<CelebrityDTO> celebrityDTOS = new ArrayList<>();
+        for (int i = 0; i < celebrities.size(); i++) {
+            Celebrity celebrity = celebrities.get(i).getCelebrity();
+            CelebrityDTO celebrityDTO = new CelebrityDTO(celebrity.getId(), celebrity.getSingerName(), celebrity.getTotalLiked(), celebrity.getSingerImage());
+            celebrityDTOS.add(celebrityDTO);
+        }
+        return celebrityDTOS;
     }
 
     @Override

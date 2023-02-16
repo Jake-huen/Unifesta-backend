@@ -1,5 +1,6 @@
 package com.wit.unifesta.controller;
 
+import com.wit.unifesta.data.dto.CelebrityDTO;
 import com.wit.unifesta.data.dto.FestivalCalendarDTO;
 import com.wit.unifesta.data.dto.SchoolDTO;
 import com.wit.unifesta.service.FestivalCalendarService;
@@ -45,12 +46,18 @@ public class SchoolController {
         return ResponseEntity.status(HttpStatus.OK).body(festivalCalendarDTO);
     }
 
-    @GetMapping("/festivalCalendar/Dday")
+    @GetMapping("/festivalCalendar/Dday") // 남은 일자 조회
     public ResponseEntity<Long> getLeftDate(@RequestParam("name") String schoolname){
         SchoolDTO schoolDTO = schoolService.getSchoolBySchoolName(schoolname);
         Long leftDate = festivalCalendarService.getLeftDate(schoolDTO.getId());
 
         return ResponseEntity.status(HttpStatus.OK).body(leftDate);
+    }
+
+    @GetMapping("/celebrity")
+    public ResponseEntity<List<CelebrityDTO>> getSchoolCelebrities(@RequestParam("name") String schoolname){
+        List<CelebrityDTO> celebrityDTOS = schoolService.getAllSchoolCelebrities(schoolname);
+        return ResponseEntity.status(HttpStatus.OK).body(celebrityDTOS);
     }
 
     @PostMapping()// 학교 생성

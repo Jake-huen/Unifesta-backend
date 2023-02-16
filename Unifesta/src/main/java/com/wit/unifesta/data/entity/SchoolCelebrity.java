@@ -7,15 +7,23 @@ import javax.persistence.*;
 @Data
 @Entity
 public class SchoolCelebrity {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SCHOOLCELEBRITY_ID")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SCHOOL_ID")
     private School school;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CELEBRITY_ID")
     private Celebrity celebrity;
+
+    public SchoolCelebrity(Celebrity celebrity) {
+        this.celebrity = celebrity;
+    }
+
+    public SchoolCelebrity() {
+
+    }
 }
