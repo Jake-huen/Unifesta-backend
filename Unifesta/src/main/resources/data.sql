@@ -26,25 +26,53 @@ insert into FestivalCalendar (addressName, eveningTime, morningTime, performance
 ;
 
 insert into Celebrity (singerName, singerImage, totalLiked) values
-                    ('10cm', 'image.png', 1),
-                    ('예빛', 'image.png', 10),
-                    ('다이나믹듀오','https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.blog.naver.com%2Fbkh4443%2F221401959538&psig=AOvVaw1dznLm-Ik9YwtozsbwsyVs&ust=1676268654367000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPjJt7-pj_0CFQAAAAAdAAAAABAE',10),
-                    ('비비','https://www.google.com/url?sa=i&url=https%3A%2F%2Fmobile.newsis.com%2Fview.html%3Far_id%3DNISX20221118_0002091664&psig=AOvVaw15gacvdx0tNdGAX9z0Fh5K&ust=1676268668404000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDLhcapj_0CFQAAAAAdAAAAABAE',10),
-                    ('비와이','',10),
-                    ('악동뮤지션','',10),
-                    ('현아','',100),
-                    ('보라미유','',100)
+                    ('10cm', 'image.png', 12),
+                    ('다이나믹듀오','',11),
+                    ('ITZY','image.png',14),
+                    ('재만','image.png',17),
+                    ('규현','image.png',23),
+                    ('픽보이','image.png',1),
+                    ('타이거JK&윤미래&비지','image.png',234),
+                    ('JUN.K','image.png',15),
+                    ('잔나비','image.png',41),
+                    ('윤하','image.png',123),
+                    ('폴킴','image.png',14),
+                    ('경서','image.png',12),
+                    ('정유진','image.png',15),
+                    ('소수빈','image.png',12),
+                    ('크러쉬','image.png',141),
+                    ('홀리뱅','image.png',12),
+                    ('MVP','image.png',1),
+                    ('뉴진스','image.png',3),
+                    ('박재범','image.png',400)
+
 ;
 
 insert into SchoolCelebrity (CELEBRITY_ID, SCHOOL_ID) values
                     (1,2),
-                    (1,2),
-                    (3,1),
-                    (4,1),
-                    (5,1),
-                    (6,1),
+                    (2,2),
+                    (3,2),
+                    (4,2),
+                    (5,2),
+                    (6,2),
                     (7,2),
-                    (8,2)
+                    (8,2),
+                    (9,2),
+                    (10,2),
+                    (11,2),
+                    (12,2),
+                    (13,2),
+                    (1,3),
+                    (14,3),
+                    (7,3),
+                    (3,3),
+                    (15,3),
+                    (16,1),
+                    (17,1),
+                    (18,1),
+                    (19,1),
+                    (9,1),
+                    (2,1)
 ;
 
 insert into FestivalReview (SCHOOL_ID, USER_ID, reviewContent, likedCount) values
