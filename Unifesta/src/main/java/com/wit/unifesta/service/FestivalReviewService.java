@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface FestivalReviewService {
 
-    List<FestivalReviewDTO> festivalReview(String schoolName);
+    List<FestivalReviewDTO> festivalReview(String schoolName, String year);
 }

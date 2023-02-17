@@ -72,8 +72,8 @@ public class SchoolController {
     }
 
     @GetMapping("/festivalReview")
-    public ResponseEntity<List<FestivalReviewDTO>> getSchoolFestivalReviews(@RequestParam("name") String schoolname){
-        List<FestivalReviewDTO> festivalReviewDTOS = festivalReviewService.festivalReview(schoolname);
+    public ResponseEntity<List<FestivalReviewDTO>> getSchoolFestivalReviews(@RequestParam("name") String schoolname, @RequestParam("year") String year){
+        List<FestivalReviewDTO> festivalReviewDTOS = festivalReviewService.festivalReview(schoolname,year);
 
         return ResponseEntity.status(HttpStatus.OK).body(festivalReviewDTOS);
     }

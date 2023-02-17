@@ -27,9 +27,9 @@ public class FestivalReviewServiceImpl implements FestivalReviewService {
     }
 
     @Override
-    public List<FestivalReviewDTO> festivalReview(String schoolName) {
+    public List<FestivalReviewDTO> festivalReview(String schoolName, String year) {
         Optional<School> school = schoolRepository.findBySchoolName(schoolName);
-        List<FestivalReview> festivalReviews = festivalReviewRepository.findBySchool_Id(school.get().getId());
+        List<FestivalReview> festivalReviews = festivalReviewRepository.findBySchool_IdAndYear(school.get().getId(),year);
         List<FestivalReviewDTO> festivalReviewDTOS = new ArrayList<>();
         for (int i = 0; i < festivalReviews.size(); i++) {
             FestivalReviewDTO festivalReviewDTO = new FestivalReviewDTO(festivalReviews.get(i).getReviewContent(), festivalReviews.get(i).getLikedCount(), festivalReviews.get(i).getYear());

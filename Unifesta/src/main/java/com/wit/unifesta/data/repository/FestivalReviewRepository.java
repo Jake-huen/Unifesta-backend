@@ -7,5 +7,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 public interface FestivalReviewRepository extends JpaRepository<FestivalReview,Long> {
-    List<FestivalReview> findBySchool_Id(Long id);
+    List<FestivalReview> findBySchool_IdAndYear(Long id, String year);
 }
