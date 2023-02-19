@@ -14,24 +14,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FestivalReviewController {
 
-    private final FestivalReviewService festivalReviewService;
-
-
-    public FestivalReviewController(FestivalReviewService festivalReviewService) {
-        this.festivalReviewService = festivalReviewService;
-    }
-
-    @PostMapping("/festivalReview")
-    public ResponseEntity<FestivalResponseDTO> createFestivalReview(@RequestBody FestivalReviewDTO festivalReviewDTO){
-        FestivalResponseDTO festivalResponseDTO1 = festivalReviewService.saveReview(festivalReviewDTO);
-
-        return ResponseEntity.status(HttpStatus.OK).body(festivalResponseDTO1);
-    }
-
-    @DeleteMapping("/festivalReview")
-    public ResponseEntity<String> deleteReview(Long id) throws Exception{
-        festivalReviewService.deleteReview(id);
-
-        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제되었습니다.");
-    }
+//    private final FestivalReviewService festivalReviewService;
+//
+//
+//    public FestivalReviewController(FestivalReviewService festivalReviewService) {
+//        this.festivalReviewService = festivalReviewService;
+//    }
+//
+//    @PostMapping("/festivalReview")
+//    public ResponseEntity<FestivalResponseDTO> createFestivalReview(@RequestBody FestivalReviewDTO festivalReviewDTO){
+//        FestivalResponseDTO festivalResponseDTO1 = festivalReviewService.saveReview(festivalReviewDTO);
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(festivalResponseDTO1);
+//    }
+//
+//    @DeleteMapping("/festivalReview")
+//    public ResponseEntity<String> deleteReview(Long id) throws Exception{
+//        festivalReviewService.deleteReview(id);
+//
+//        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제되었습니다.");
+//    }
 }
