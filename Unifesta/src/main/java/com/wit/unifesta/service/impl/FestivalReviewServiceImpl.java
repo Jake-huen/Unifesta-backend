@@ -4,11 +4,13 @@ import com.wit.unifesta.data.dto.FestivalResponseDTO;
 import com.wit.unifesta.data.dto.FestivalReviewDTO;
 import com.wit.unifesta.data.entity.FestivalReview;
 import com.wit.unifesta.data.entity.School;
+import com.wit.unifesta.data.entity.User;
 import com.wit.unifesta.data.repository.FestivalReviewRepository;
 import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.service.FestivalReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,11 +79,10 @@ public class FestivalReviewServiceImpl implements FestivalReviewService {
     }
 
     @Override
+    @Transactional
     public void deleteReview(Long id) throws Exception {
-        Optional<FestivalReview> festivalReview = festivalReviewRepository.findById(id);
-        if (festivalReview != null) {
-            festivalReviewRepository.delete(festivalReview);
-        }
+        FestivalReview festivalReview = festivalReviewRepository.getReferenceById(id);
+        festivalReviewRepository.delete(festivalReview);
     }
 
 }
