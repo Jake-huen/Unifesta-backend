@@ -1,6 +1,9 @@
 package com.wit.unifesta.controller;
 
+import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.service.LoginService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +21,11 @@ public class LoginController {
     }
 
     @GetMapping("/login/kakao") // 카카오 로그인
-    public String kakoLogin(@RequestParam String code) throws IOException {
-        return loginService.getKakaoAccessToken(code);
+    public ResponseEntity<UserResponseDTO> kakoLogin(@RequestParam String code) throws IOException {
+        String accessToken = loginService.getKakaoAccessToken(code);
+        UserResponseDTO responseDTO = loginService.getUserInfo(accessToken);
+
+        return ResponseEntity.status(HttpStatus.OK).body(responseDTO);
+
     }
 }
