@@ -2,6 +2,7 @@ package com.wit.unifesta.service.impl;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.data.repository.UserRepository;
 import com.wit.unifesta.service.LoginService;
@@ -37,7 +38,7 @@ public class LoginServiceImpl implements LoginService {
         StringBuilder sb = new StringBuilder();
         sb.append("grant_type=authorization_code");
         sb.append("&client_id=60136aeba56bd4e6caf4c6afe67d9ed9"); // TODO REST_API_KEY 입력
-        sb.append("&redirect_uri=http://localhost:8080/login/kakao"); // TODO 인가코드 받은 redirect_uri 입력
+        sb.append("&redirect_uri=http://localhost:3000/Kakaologin"); // TODO 인가코드 받은 redirect_uri 입력
         sb.append("&code=" + code);
         bw.write(sb.toString());
         bw.flush();
@@ -73,7 +74,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public UserResponseDTO getUserInfo(String accessToken) {
+    public UserDTO getUserInfo(String accessToken) {
         String reqURL = "https://kapi.kakao.com/v2/user/me";
 
         //access_token을 이용하여 사용자 정보 조회
@@ -115,10 +116,13 @@ public class LoginServiceImpl implements LoginService {
 
             br.close();
 
-            UserResponseDTO userResponseDTO = new UserResponseDTO();
-            userResponseDTO.setUsername(Integer.toString(id));
-            userResponseDTO.setEmail(email);
-            return userResponseDTO;
+            UserDTO userDTO = new UserDTO();
+            Long allUsers = userRepository.count();
+            userDTO.setId(allUsers+1);
+            userDTO.setUsername(Integer.toString(id));
+            userDTO.setEmail(email);
+            userDTO.setPassword("123123");
+            return userDTO;
 
         } catch (IOException e) {
             e.printStackTrace();

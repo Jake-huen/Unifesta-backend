@@ -1,5 +1,6 @@
 package com.wit.unifesta.service;
 
+import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 
 import java.io.IOException;
@@ -9,5 +10,5 @@ public interface LoginService {
 
     String getKakaoAccessToken(String code) throws IOException;
 
-    UserResponseDTO getUserInfo(String accessToken);
+    UserDTO getUserInfo(String accessToken);
 }
