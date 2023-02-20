@@ -119,7 +119,7 @@ public class LoginServiceImpl implements LoginService {
             UserDTO userDTO = new UserDTO();
             Long allUsers = userRepository.count();
             userDTO.setId(allUsers+1);
-            userDTO.setUsername(Integer.toString(id));
+            userDTO.setUsername(email);
             userDTO.setEmail(email);
             userDTO.setPassword("123123");
             return userDTO;
