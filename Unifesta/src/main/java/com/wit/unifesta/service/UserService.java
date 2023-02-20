@@ -1,8 +1,11 @@
 package com.wit.unifesta.service;
 
+import com.wit.unifesta.data.dto.SchoolDTO;
 import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -15,5 +18,11 @@ public interface UserService {
     UserResponseDTO updateUser(UserDTO userDTO);
 
     void deleteUser(Long id) throws Exception;
+
+    void addSchool(Long id, String schoolname);
+
+    void deleteSchool(Long id, String schoolname);
+
+    List<SchoolDTO> getAllSchools(Long id);
 
 }

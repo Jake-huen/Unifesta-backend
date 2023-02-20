@@ -1,14 +1,10 @@
 package com.wit.unifesta.service.impl;
 
-import com.wit.unifesta.data.dto.UserDTO;
-import com.wit.unifesta.data.dto.UserResponseDTO;
+import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.data.repository.UserRepository;
-import org.assertj.core.api.Assertions;
+import com.wit.unifesta.data.repository.UserSchoolRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserServiceImplTest {
 
@@ -16,7 +12,13 @@ class UserServiceImplTest {
     UserRepository userRepository;
 
     @Autowired
-    UserServiceImpl userService = new UserServiceImpl(userRepository);
+    UserSchoolRepository userSchoolRepository;
+
+    @Autowired
+    SchoolRepository schoolRepository;
+
+    @Autowired
+    UserServiceImpl userService = new UserServiceImpl(userRepository, userSchoolRepository, schoolRepository);
 
     @Test
     void getUser() {
