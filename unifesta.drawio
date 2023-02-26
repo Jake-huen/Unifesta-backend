@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-26T06:49:45.350Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="LUuAiHrqfKNixTDcUSZX" version="20.8.23" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-26T06:50:02.302Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="BaI2y2raWmSI0qqoYma-" version="20.8.23" type="github">
   <diagram id="gcupz1wOseAFlGIjOzjX" name="페이지-1">
     <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -55,7 +55,7 @@
         <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-12" value="DB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="890" y="30" width="120" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-15" value="EC2 서버" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-15" value="EC2 서버&lt;br&gt;(http://52.78.59.88:8080/)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="870" y="250" width="160" height="165" as="geometry" />
         </mxCell>
         <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-28" target="Nez7KcpY-7Rk2Y-lfuM3-15">
