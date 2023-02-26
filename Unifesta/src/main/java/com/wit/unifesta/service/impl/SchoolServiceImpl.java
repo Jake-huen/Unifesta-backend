@@ -34,7 +34,7 @@ public class SchoolServiceImpl implements SchoolService {
         List<School> schools = schoolRepository.findAll();
         List<SchoolDTO> schoolDTOS = new ArrayList<>();
         for (int i = 0; i < schools.size(); i++) {
-            SchoolDTO schoolDTO = new SchoolDTO(schools.get(i).getId(), schools.get(i).getSchoolName(), schools.get(i).getFestivalDescription());
+            SchoolDTO schoolDTO = new SchoolDTO(schools.get(i).getId(), schools.get(i).getSchoolName(), schools.get(i).getFestivalPoster(),schools.get(i).getFestivalDescription());
             schoolDTOS.add(schoolDTO);
         }
         return schoolDTOS;

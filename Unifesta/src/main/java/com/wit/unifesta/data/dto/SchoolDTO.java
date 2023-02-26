@@ -23,4 +23,11 @@ public class SchoolDTO {
         this.festivalPoster = festivalDescription;
         this.festivalDescription = festivalDescription;
     }
+
+    public SchoolDTO(Long id, String schoolName, String festivalPoster, String festivalDescription) {
+        this.id = id;
+        this.schoolName = schoolName;
+        this.festivalPoster = festivalPoster;
+        this.festivalDescription = festivalDescription;
+    }
 }

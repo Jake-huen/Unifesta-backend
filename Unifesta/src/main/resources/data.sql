@@ -15,17 +15,23 @@ insert into User (username, password, email) values
 
 insert into School (schoolName,festivalDescription, festivalPoster) values
                     ('건국대학교','2022 통합축제 녹색지대 ''綠色地帶'' : 멈춰있던 우리, 바로시작 REBOOT
-                                2022 통합축제 녹색지대는 일감호 축전과 성신의 예술제를 통합 기획하여 더욱 더 큰 규모로 진행됩니다. 지금까지 건국대학교 축제의 명성에 걸맞은 다양한 체험 부스를 준비햇습니다. 또한 축제 분위기를 한껏 끌어올리기 위해 학교를 꾸밀 다양한 소품 또한 준비했으니 기대하셔도 좋습니다. 학우들의 아이디어를 모아 직접 운영하는 부스와 넘치는 끼와 재능을 펼칠 수 있는 무대까지, 녹색지대는 학우 여러분이 진정한 주인공이 되는, 건국대학교 모든 구성원들이 화합할 수 있는 무대가 될 것이라고 확신합니다. 더욱 새로워질, 더욱 활기 넘칠 건국대학교를 여러분의 초록빛으로 물들여주세요! 그럼 녹색지대에서 여러분을 기다리고 있겠습니다!',
-                                'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chugye.ac.kr%2Fmbs%2Fmobile%2Fjsp%2Fboard%2Fview_mobile.jsp%3FboardId%3D6784%26boardSeq%3D5212576%26boardType%3D01%26id%3Dmobile_030100000000&psig=AOvVaw32YnkjsoyB35si_BwGSz7j&ust=1676268527848000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJihiYOpj_0CFQAAAAAdAAAAABAR'),
+                                2022 통합축제 녹색지대는 일감호 축전과 성신의 예술제를 통합 기획하여 더욱 더 큰 규모로 진행됩니다. 지금까지 건국대학교 축제의 명성에 걸맞은 다양한 체험 부스를 준비햇습니다. 또한 축제 분위기를 한껏 끌어올리기 위해 학교를 꾸밀 다양한 소품 또한 준비했으니 기대하셔도 좋습니다. 학우들의 아이디어를 모아 직접 운영하는 부스와 넘치는 끼와 재능을 펼칠 수 있는 무대까지, 녹색지대는 학우 여러분이 진정한 주인공이 되는, 건국대학교 모든 구성원들이 화합할 수 있는 무대가 될 것이라고 확신합니다. 더욱 새로워질, 더욱 활기 넘칠 건국대학교를 여러분의 초록빛으로 물들여주세요! 그럼 녹색지대에서 여러분을 기다리고 있겠습니다!'
+                                ,'https://placeimg.com/100/140/nature'),
                     ('경희대학교','MASTERPEACE: Ready, Set, Play
-                                이번 MASTERPEACE는 ''학창시절 운동회''를 컨셉으로 개최됩니다! 가을 MASTERPEACE에서 동심으로 돌아가 예쁜 추억 남기고 가시기 바랍니다!',''),
-                    ('한양대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','')
+                                이번 MASTERPEACE는 ''학창시절 운동회''를 컨셉으로 개최됩니다! 가을 MASTERPEACE에서 동심으로 돌아가 예쁜 추억 남기고 가시기 바랍니다!','https://placeimg.com/100/140/nature'),
+                    ('한양대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','https://placeimg.com/100/140/nature'),
+                    ('성균관대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','https://placeimg.com/100/140/nature'),
+                    ('경북대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','https://placeimg.com/100/140/nature'),
+                    ('부산대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','https://placeimg.com/100/140/nature'),
+                    ('동아대학교','애한제: ''한양으로 물들이다''라는 슬로건을 바탕으로 한양인이 만들어가는 가을 축제 애한제에 학우 여러분들의 많은 관심과 참여 부탁드립니다.','https://placeimg.com/100/140/nature')
 ;
 
 insert into UserSchool (USER_ID, SCHOOL_ID, likedCount) values
                     (1,1,0),
                     (2,3,0),
-                    (2,3,0)
+                    (2,3,0),
+                    (10,1,0),
+                    (10,2,0)
 ;
 
 insert into FestivalCalendar (addressName, eveningTime, morningTime, performanceTime, subway, totalDate, school) values
@@ -35,25 +41,25 @@ insert into FestivalCalendar (addressName, eveningTime, morningTime, performance
 ;
 
 insert into Celebrity (singerName, singerImage, totalLiked) values
-                    ('10cm', 'image.png', 12),
-                    ('다이나믹듀오','',11),
-                    ('ITZY','image.png',14),
-                    ('재만','image.png',17),
-                    ('규현','image.png',23),
-                    ('픽보이','image.png',1),
-                    ('타이거JK&윤미래&비지','image.png',234),
-                    ('JUN.K','image.png',15),
-                    ('잔나비','image.png',41),
-                    ('윤하','image.png',123),
-                    ('폴킴','image.png',14),
-                    ('경서','image.png',12),
-                    ('정유진','image.png',15),
-                    ('소수빈','image.png',12),
-                    ('크러쉬','image.png',141),
-                    ('홀리뱅','image.png',12),
-                    ('MVP','image.png',1),
-                    ('뉴진스','image.png',3),
-                    ('박재범','image.png',400)
+                    ('10cm', 'https://placeimg.com/200/100/people', 12),
+                    ('다이나믹듀오','https://placeimg.com/200/100/people',11),
+                    ('ITZY','https://placeimg.com/200/100/people',14),
+                    ('재만','https://placeimg.com/200/100/people',17),
+                    ('규현','https://placeimg.com/200/100/people',23),
+                    ('픽보이','https://placeimg.com/200/100/people',1),
+                    ('타이거JK&윤미래&비지','https://placeimg.com/200/100/people',234),
+                    ('JUN.K','https://placeimg.com/200/100/people',15),
+                    ('잔나비','https://placeimg.com/200/100/people',41),
+                    ('윤하','https://placeimg.com/200/100/people',123),
+                    ('폴킴','https://placeimg.com/200/100/people',14),
+                    ('경서','https://placeimg.com/200/100/people',12),
+                    ('정유진','https://placeimg.com/200/100/people',15),
+                    ('소수빈','https://placeimg.com/200/100/people',12),
+                    ('크러쉬','https://placeimg.com/200/100/people',141),
+                    ('홀리뱅','https://placeimg.com/200/100/people',12),
+                    ('MVP','https://placeimg.com/200/100/people',1),
+                    ('뉴진스','https://placeimg.com/200/100/people',3),
+                    ('박재범','https://placeimg.com/200/100/people',400)
 
 ;
 

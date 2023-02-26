@@ -103,21 +103,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addSchool(Long id, String schoolname) {
-        Optional<School> school = schoolRepository.findBySchoolName(schoolname);
+    public void addSchool(String email, String schoolName) {
+        Optional<User> user = userRepository.findByEmail(email);
+        Optional<School> school = schoolRepository.findBySchoolName(schoolName);
+        System.out.println("user = " + user);
+        System.out.println("school = " + school);
         UserSchool userSchool = new UserSchool();
-        userSchool.setUser(userRepository.getReferenceById(id)); // 유저 얻기
+        userSchool.setUser(user.get()); // 유저 얻기
         userSchool.setSchool(schoolRepository.getReferenceById(school.get().getId()));
         userSchoolRepository.save(userSchool);
     }
 
     @Override
-    public void deleteSchool(Long id, String schoolname) {
-        List<UserSchool> userSchools = userSchoolRepository.findByUser_Id(id);
+    public void deleteSchool(String email, String schoolName) {
+        Optional<User> user = userRepository.findByEmail(email);
+        List<UserSchool> userSchools = userSchoolRepository.findByUser_Id(user.get().getId());
         Long findUserSchoolId = 1L;
         for(int i=0;i<userSchools.size();i++){
             String tempschoolname = userSchools.get(i).getSchool().getSchoolName();
-            if(tempschoolname==schoolname){
+            if(tempschoolname==schoolName){
                 findUserSchoolId = userSchools.get(i).getId();
                 break;
             }
@@ -133,7 +137,7 @@ public class UserServiceImpl implements UserService {
         List<SchoolDTO> schoolDTOS = new ArrayList<>();
         for(int i=0;i<userSchools.size();i++){
             School school = userSchools.get(i).getSchool();
-            SchoolDTO schoolDTO = new SchoolDTO(school.getId(), school.getSchoolName(), school.getFestivalDescription());
+            SchoolDTO schoolDTO = new SchoolDTO(school.getId(), school.getSchoolName(), school.getFestivalPoster(),school.getFestivalDescription());
             schoolDTOS.add(schoolDTO);
         }
         return schoolDTOS;

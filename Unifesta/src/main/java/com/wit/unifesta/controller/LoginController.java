@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
@@ -31,7 +32,6 @@ public class LoginController {
         userService.saveUser(userDTO);
 
         return ResponseEntity.status(HttpStatus.OK).body(userDTO);
-
-
     }
+
 }

@@ -31,7 +31,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @PostMapping()
+    @PostMapping() // 유저 추가
     public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserDTO userDTO){
         UserResponseDTO userResponseDTO = userService.saveUser(userDTO);
 
@@ -40,13 +40,13 @@ public class UserController {
 
 
 
-    @PutMapping()
+    @PutMapping()// 유저 변경
     public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserDTO UserDTO) throws Exception{
         UserResponseDTO userResponseDTO = userService.updateUser(new UserDTO());
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @DeleteMapping()
+    @DeleteMapping() // 유저 삭제
     public ResponseEntity<String> deleteUser(Long id) throws Exception{
         userService.deleteUser(id);
 
@@ -59,17 +59,18 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(allSchools);
     }
 
-    @PostMapping("/addschool") // 학교 찜하기 클릭
-    public ResponseEntity<String> addSchool(@RequestParam Long id, @RequestParam String schoolname){
-        userService.addSchool(id,schoolname);
+    @PostMapping("/addSchool") // 학교 찜하기 클릭
+    public ResponseEntity<String> addSchool(@RequestParam String email, @RequestParam String schoolName){
+        userService.addSchool(email,schoolName);
         return ResponseEntity.status(HttpStatus.OK).body("학교 추가되었습니다.");
     }
 
-    @PostMapping("/deleteschool")
-    public ResponseEntity<String> deleteSchool(@RequestParam Long id, @RequestParam String schoolname){
-        userService.deleteSchool(id,schoolname);
+    @PostMapping("/deleteSchool")
+    public ResponseEntity<String> deleteSchool(@RequestParam String username, @RequestParam String schoolName){
+        userService.deleteSchool(username,schoolName);
         return ResponseEntity.status(HttpStatus.OK).body("학교 삭제되었습니다.");
     }
+
 
 
 }

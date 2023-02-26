@@ -19,9 +19,9 @@ public interface UserService {
 
     void deleteUser(Long id) throws Exception;
 
-    void addSchool(Long id, String schoolname);
+    void addSchool(String email, String schoolName);
 
-    void deleteSchool(Long id, String schoolname);
+    void deleteSchool(String email, String schoolName);
 
     List<SchoolDTO> getAllSchools(Long id);
 
