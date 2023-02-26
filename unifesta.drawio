@@ -1,1 +1,82 @@
-<mxfile host="app.diagrams.net" modified="2023-02-24T01:53:50.716Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="FKjiNFhONP-ldrBb5XwQ" version="20.7.4" type="github"><diagram id="gcupz1wOseAFlGIjOzjX" name="페이지-1">jZLBToQwEIafhqMJtIruVdx1Y2QvJBqPlY60plDSLQI+vWCnsM1mkz21/ebvdOafRjSrh2fDWpFrDioiMR8i+hQRktyRzbTMZHRkQ1MHKiM5ilZQyF9AGCPtJIdjILRaKyvbEJa6aaC0AWPG6D6UfWkVvtqyCs5AUTJ1Tt8lt8LRB3K/8j3ISviXkxQbrpkXYydHwbjuTxDdRjQzWlu3q4cM1Gye98Xd212ILoUZaOw1Fz7yg/lW+0MZi/yNvr6QXfx5c+uy/DDVYcNYrB29A0Z3DYc5SRLRx15IC0XLyjnaTzOfmLC1wjCmA2NhuFhnsnQ/fRvQNVgzTpIhnDx+GJLiuV/tT7yn4sR6r2M48WrJvJoybdAXf1z9/4+d/GK6/QM=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-02-26T06:49:45.350Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="LUuAiHrqfKNixTDcUSZX" version="20.8.23" type="github">
+  <diagram id="gcupz1wOseAFlGIjOzjX" name="페이지-1">
+    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-13" style="orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-1" target="Nez7KcpY-7Rk2Y-lfuM3-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-23" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-1" target="Nez7KcpY-7Rk2Y-lfuM3-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-24" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-1" target="Nez7KcpY-7Rk2Y-lfuM3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-25" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-1" target="Nez7KcpY-7Rk2Y-lfuM3-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-1" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="70" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-32" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-6" target="Nez7KcpY-7Rk2Y-lfuM3-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-6" value="사용자 정보" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-7" target="Nez7KcpY-7Rk2Y-lfuM3-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-7" value="로그인" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-33" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-8" target="Nez7KcpY-7Rk2Y-lfuM3-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-8" value="학교 정보" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-34" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.005;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-9" target="Nez7KcpY-7Rk2Y-lfuM3-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-9" value="축제 정보" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-26" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-10" target="Nez7KcpY-7Rk2Y-lfuM3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-10" value="카카오 서버" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="525" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=link;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-12" target="Nez7KcpY-7Rk2Y-lfuM3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-12" value="DB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="30" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-15" value="EC2 서버" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="250" width="160" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-28" target="Nez7KcpY-7Rk2Y-lfuM3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-28" value="GET : /user?id : 사용자 조회&lt;br&gt;POST : /user : 사용자 생성&lt;br&gt;PUT : /user : 유저 정보 변경&lt;br&gt;DELETE : /user : 유저 삭제&lt;br&gt;GET : /user/schoolList : 찜한 학교 목록&lt;br&gt;POST : /user/addSchool : 학교 찜하기&lt;br&gt;POST : /user/deleteSchool : 찜한 학교 삭제" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="220" width="270" height="127.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-35" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-29" target="Nez7KcpY-7Rk2Y-lfuM3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-29" value="GET : /school?schoolName : 학교 이름으로 조회&lt;br&gt;GET: /school/all : 모든 학교 조회&lt;br&gt;GET : /school/festivalCalendar : 축제 일정 조회&lt;br&gt;GET : /school/festival/Dday : 남은 일자 조회&lt;br&gt;GET : /school/celebrity : 학교 연예인 조회&lt;br&gt;POST : /school : 학교 생성&lt;br&gt;GET : /school/festivalReview : 학교 리뷰 조회" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="300" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-36" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nez7KcpY-7Rk2Y-lfuM3-30" target="Nez7KcpY-7Rk2Y-lfuM3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nez7KcpY-7Rk2Y-lfuM3-30" value="/festivalCalendar : 축제 일정 조회" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="660" width="300" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
