@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://unifesta-frontend-9y8wprwep-unifesta.vercel.app/")
+@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
 public class SampleController {
     @GetMapping("/")
     public String get(){

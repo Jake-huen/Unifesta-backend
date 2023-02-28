@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://unifesta-frontend-9y8wprwep-unifesta.vercel.app/")
+@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
 @RequestMapping("/school")
 public class SchoolController {
 

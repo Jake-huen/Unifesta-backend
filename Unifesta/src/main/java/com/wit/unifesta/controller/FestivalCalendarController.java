@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://unifesta-frontend-9y8wprwep-unifesta.vercel.app/")
+@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
 @RequestMapping("/festivalCalendar")
 public class FestivalCalendarController {
 

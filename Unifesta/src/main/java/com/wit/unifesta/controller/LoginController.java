@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;
 
 @Controller
-@CrossOrigin(origins = "https://unifesta-frontend-9y8wprwep-unifesta.vercel.app/")
+@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
 public class LoginController {
     private final LoginService loginService;
     private final UserService userService;

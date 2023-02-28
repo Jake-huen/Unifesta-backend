@@ -38,7 +38,7 @@ public class LoginServiceImpl implements LoginService {
         StringBuilder sb = new StringBuilder();
         sb.append("grant_type=authorization_code");
         sb.append("&client_id=60136aeba56bd4e6caf4c6afe67d9ed9"); // TODO REST_API_KEY 입력
-        sb.append("&redirect_uri=https://unifesta-frontend-9y8wprwep-unifesta.vercel.app/Kakaologin"); // TODO 인가코드 받은 redirect_uri 입력
+        sb.append("&redirect_uri=https://unifesta-frontend.vercel.app/Kakaologin"); // TODO 인가코드 받은 redirect_uri 입력
         sb.append("&code=" + code);
         bw.write(sb.toString());
         bw.flush();
