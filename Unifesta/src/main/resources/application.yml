@@ -56,16 +56,16 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 613126198444-jc1k12sumj8fk5afc1846b0pmem1k3lh.apps.googleusercontent.com
-            client-secret: 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
-            scope:
-              - email
-              - profile
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 613126198444-jc1k12sumj8fk5afc1846b0pmem1k3lh.apps.googleusercontent.com
+#            client-secret: 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
+#            scope:
+#              - email
+#              - profile
 
 
 ---
