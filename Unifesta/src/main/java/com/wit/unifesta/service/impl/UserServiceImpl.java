@@ -10,6 +10,7 @@ import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.data.repository.UserRepository;
 import com.wit.unifesta.data.repository.UserSchoolRepository;
 import com.wit.unifesta.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,26 +22,22 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final UserSchoolRepository userSchoolRepository;
     private final SchoolRepository schoolRepository;
 
-    @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserSchoolRepository userSchoolRepository, SchoolRepository schoolRepository){
-        this.userRepository = userRepository;
-        this.userSchoolRepository = userSchoolRepository;
-        this.schoolRepository = schoolRepository;
-    }
-
+    /**
+    * 유저 찾기
+    * */
     @Override
+    @Transactional
     public UserResponseDTO getUser(Long id) {
-        LOGGER.info("[getUser] input id : {}",id);
         User user = userRepository.getReferenceById(id);
 
-        LOGGER.info("[getUser] user id : {}, name : {}, email : {} ", user.getId(), user.getUsername(), user.getEmail());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(user.getId());
         userResponseDTO.setUsername(user.getUsername());
@@ -53,14 +50,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserResponseDTO saveUser(UserDTO userDTO) {
-        LOGGER.info("[saveUser] userDTO : {}", userDTO.toString());
         User user = new User();
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
 
         User savedUser = userRepository.save(user);
-        LOGGER.info("[saveUser] savedUser : {}", savedUser.toString());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setId(savedUser.getId());
         userResponseDTO.setUsername(savedUser.getUsername());
@@ -103,6 +98,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void addSchool(String email, String schoolName) {
         Optional<User> user = userRepository.findByEmail(email);
         Optional<School> school = schoolRepository.findBySchoolName(schoolName);
@@ -115,6 +111,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteSchool(String email, String schoolName) {
         Optional<User> user = userRepository.findByEmail(email);
         List<UserSchool> userSchools = userSchoolRepository.findByUser_Id(user.get().getId());
@@ -132,6 +129,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public List<SchoolDTO> getAllSchools(Long id) {
         List<UserSchool> userSchools = userSchoolRepository.findByUser_Id(id);
         List<SchoolDTO> schoolDTOS = new ArrayList<>();

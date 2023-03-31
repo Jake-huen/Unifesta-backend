@@ -11,16 +11,18 @@ import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * QUserSchool is a Querydsl query type for UserSchool
+ * QUserFestivalReview is a Querydsl query type for UserFestivalReview
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class QUserSchool extends EntityPathBase<UserSchool> {
+public class QUserFestivalReview extends EntityPathBase<UserFestivalReview> {
 
-    private static final long serialVersionUID = 1684990314L;
+    private static final long serialVersionUID = -1245521178L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final QUserSchool userSchool = new QUserSchool("userSchool");
+    public static final QUserFestivalReview userFestivalReview = new QUserFestivalReview("userFestivalReview");
+
+    public final QFestivalReview festivalReview;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -30,24 +32,25 @@ public class QUserSchool extends EntityPathBase<UserSchool> {
 
     public final QUser user;
 
-    public QUserSchool(String variable) {
-        this(UserSchool.class, forVariable(variable), INITS);
+    public QUserFestivalReview(String variable) {
+        this(UserFestivalReview.class, forVariable(variable), INITS);
     }
 
-    public QUserSchool(Path<? extends UserSchool> path) {
+    public QUserFestivalReview(Path<? extends UserFestivalReview> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QUserSchool(PathMetadata metadata) {
+    public QUserFestivalReview(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QUserSchool(PathMetadata metadata, PathInits inits) {
-        this(UserSchool.class, metadata, inits);
+    public QUserFestivalReview(PathMetadata metadata, PathInits inits) {
+        this(UserFestivalReview.class, metadata, inits);
     }
 
-    public QUserSchool(Class<? extends UserSchool> type, PathMetadata metadata, PathInits inits) {
+    public QUserFestivalReview(Class<? extends UserFestivalReview> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.festivalReview = inits.isInitialized("festivalReview") ? new QFestivalReview(forProperty("festivalReview"), inits.get("festivalReview")) : null;
         this.school = inits.isInitialized("school") ? new QSchool(forProperty("school"), inits.get("school")) : null;
         this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
     }

@@ -3,6 +3,7 @@ package com.wit.unifesta.data.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -20,5 +21,5 @@ public class UserSchool {
     @JoinColumn(name = "SCHOOL_ID")
     private School school;
 
-    private int likedCount;
+    private LocalDateTime localDateTime;
 }

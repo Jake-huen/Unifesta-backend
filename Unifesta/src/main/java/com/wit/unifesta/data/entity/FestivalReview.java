@@ -21,31 +21,20 @@ public class FestivalReview {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private User user;
-
-
-    @JoinColumn(name = "SCHOOL_ID")
-    @ManyToOne(optional = false)
-    private School school;
+    @JoinColumn(name = "USER_FESTIVALREVIEW_ID")
+    private UserFestivalReview userFestivalReview;
 
     @Column(length = 1000) private String reviewContent;
 
     private int likedCount;
 
-    private String year;
+    private LocalDateTime localDateTime;
 
     public FestivalReview(){} //protected
 
-    public FestivalReview(School school, String reviewContent, int likedCount,String year) {
-        this.school = school;
+    public FestivalReview(String reviewContent, int likedCount) {
         this.reviewContent = reviewContent;
         this.likedCount = likedCount;
-        this.year = year;
-    }
-
-    public static FestivalReview of(School school, String reviewContent, int likedCount, String year) {
-        return new FestivalReview(school,reviewContent,likedCount,year);
     }
 
     @Override

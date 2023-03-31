@@ -19,6 +19,8 @@ public class SchoolCelebrity {
     @JoinColumn(name = "CELEBRITY_ID")
     private Celebrity celebrity;
 
+    private String comeDate; // 오는 날짜
+
     public SchoolCelebrity(Celebrity celebrity) {
         this.celebrity = celebrity;
     }

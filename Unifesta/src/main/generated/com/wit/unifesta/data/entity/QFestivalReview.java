@@ -26,13 +26,11 @@ public class QFestivalReview extends EntityPathBase<FestivalReview> {
 
     public final NumberPath<Integer> likedCount = createNumber("likedCount", Integer.class);
 
+    public final DateTimePath<java.time.LocalDateTime> localDateTime = createDateTime("localDateTime", java.time.LocalDateTime.class);
+
     public final StringPath reviewContent = createString("reviewContent");
 
-    public final QSchool school;
-
-    public final QUser user;
-
-    public final StringPath year = createString("year");
+    public final QUserFestivalReview userFestivalReview;
 
     public QFestivalReview(String variable) {
         this(FestivalReview.class, forVariable(variable), INITS);
@@ -52,8 +50,7 @@ public class QFestivalReview extends EntityPathBase<FestivalReview> {
 
     public QFestivalReview(Class<? extends FestivalReview> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.school = inits.isInitialized("school") ? new QSchool(forProperty("school"), inits.get("school")) : null;
-        this.user = inits.isInitialized("user") ? new QUser(forProperty("user")) : null;
+        this.userFestivalReview = inits.isInitialized("userFestivalReview") ? new QUserFestivalReview(forProperty("userFestivalReview"), inits.get("userFestivalReview")) : null;
     }
 
 }

@@ -9,14 +9,15 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Data
+@Entity
 @Table(indexes = {
         @Index(columnList = "schoolName"),
         @Index(columnList = "festivalDescription")
 })
-@Entity
+@Getter
+@Setter
 public class School {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     @Column(name = "SCHOOL_ID")
     private Long id; // 학교 아이디
 
@@ -27,13 +28,13 @@ public class School {
     @OneToMany(mappedBy = "school")
     private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>(); // 학교 연예인들
 
-    @OneToOne(mappedBy = "school")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "school", cascade = CascadeType.ALL)
     private FestivalCalendar festivalCalendar; // 축제 일정
 
     @Column(length = 500) private String festivalPoster; // 축제 포스터
 
-    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
-    private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기
+//    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
+//    private final List<FestivalReview> festivalReviewList = new ArrayList<>(); // 축제 후기
 
     public School() {
     }
@@ -53,6 +54,8 @@ public class School {
         this.id = id;
         this.schoolName = schoolName;
     }
+
+    //==연관관계 메서드==//
 
     // 독특한 방법으로 equals, hashcode 만듬
     @Override

@@ -24,6 +24,8 @@ public class QSchoolCelebrity extends EntityPathBase<SchoolCelebrity> {
 
     public final QCelebrity celebrity;
 
+    public final StringPath comeDate = createString("comeDate");
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final QSchool school;

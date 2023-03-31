@@ -31,14 +31,12 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
 
-    @PostMapping() // 유저 추가
+    @PostMapping() // 유저 등록
     public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserDTO userDTO){
         UserResponseDTO userResponseDTO = userService.saveUser(userDTO);
 
         return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
     }
-
-
 
     @PutMapping()// 유저 변경
     public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserDTO UserDTO) throws Exception{

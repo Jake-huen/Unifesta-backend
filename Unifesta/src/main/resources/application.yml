@@ -2,12 +2,12 @@ debug: false
 management.endpoints.web.exposure.include: "*"
 
 # 서버 설정
-server:
-  port: 443
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-type: PKCS12
-    key-store-password: rlaxogjs8312
+#server:
+#  port: 443
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-type: PKCS12
+#    key-store-password: rlaxogjs8312
 
 
 logging:

@@ -7,6 +7,7 @@ import com.wit.unifesta.data.dto.SchoolDTO;
 import com.wit.unifesta.service.FestivalCalendarService;
 import com.wit.unifesta.service.FestivalReviewService;
 import com.wit.unifesta.service.SchoolService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,19 +18,13 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
+@RequiredArgsConstructor
 @RequestMapping("/school")
 public class SchoolController {
 
     private final SchoolService schoolService;
     private final FestivalCalendarService festivalCalendarService;
     private final FestivalReviewService festivalReviewService;
-
-    @Autowired
-    public SchoolController(SchoolService schoolService, FestivalCalendarService festivalCalendarService,FestivalReviewService festivalReviewService){
-        this.schoolService = schoolService;
-        this.festivalCalendarService = festivalCalendarService;
-        this.festivalReviewService = festivalReviewService;
-    }
 
     @GetMapping()// 학교 이름으로 조회
     public ResponseEntity<SchoolDTO> getSchoolByName(@RequestParam("name") String name){
@@ -71,10 +66,10 @@ public class SchoolController {
         return ResponseEntity.status(HttpStatus.OK).body(schoolDTO1);
     }
 
-    @GetMapping("/festivalReview")
-    public ResponseEntity<List<FestivalReviewDTO>> getSchoolFestivalReviews(@RequestParam("name") String schoolname, @RequestParam("year") String year){
-        List<FestivalReviewDTO> festivalReviewDTOS = festivalReviewService.festivalReview(schoolname,year);
-
-        return ResponseEntity.status(HttpStatus.OK).body(festivalReviewDTOS);
-    }
+//    @GetMapping("/festivalReview")
+//    public ResponseEntity<List<FestivalReviewDTO>> getSchoolFestivalReviews(@RequestParam("name") String schoolname, @RequestParam("year") String year){
+//        List<FestivalReviewDTO> festivalReviewDTOS = festivalReviewService.festivalReview(schoolname,year);
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(festivalReviewDTOS);
+//    }
 }

@@ -22,15 +22,11 @@ public class Celebrity {
     @Column(name = "CELEBRITY_ID")
     private Long id;
 
-//    @OneToMany(mappedBy = "celebrity")
-//    private List<SchoolCelebrity> schoolCelebrities = new ArrayList<SchoolCelebrity>();
-
     private String singerName; // 가수 이름
 
     private Long totalLiked; // 좋아요 수
 
     @Column(length = 500) private String singerImage; // 가수 이미지
-    // 좋아요 한 사람
 
     public Celebrity(Long id,String singerName){
         this.id = id;

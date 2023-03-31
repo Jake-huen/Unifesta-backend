@@ -22,11 +22,11 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath email = createString("email");
 
-    public final ListPath<FestivalReview, QFestivalReview> festivalReviews = this.<FestivalReview, QFestivalReview>createList("festivalReviews", FestivalReview.class, QFestivalReview.class, PathInits.DIRECT2);
-
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath password = createString("password");
+
+    public final ListPath<UserFestivalReview, QUserFestivalReview> userFestivalReviews = this.<UserFestivalReview, QUserFestivalReview>createList("userFestivalReviews", UserFestivalReview.class, QUserFestivalReview.class, PathInits.DIRECT2);
 
     public final StringPath username = createString("username");
 

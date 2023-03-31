@@ -8,5 +8,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface FestivalReviewRepository extends JpaRepository<FestivalReview,Long> {
-    List<FestivalReview> findBySchool_IdAndYear(Long id, String year);
 }

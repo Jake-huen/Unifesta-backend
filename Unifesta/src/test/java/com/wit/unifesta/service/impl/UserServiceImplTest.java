@@ -1,12 +1,20 @@
 package com.wit.unifesta.service.impl;
 
+import com.wit.unifesta.data.dto.UserDTO;
+import com.wit.unifesta.data.dto.UserResponseDTO;
+import com.wit.unifesta.data.entity.User;
 import com.wit.unifesta.data.repository.SchoolRepository;
 import com.wit.unifesta.data.repository.UserRepository;
 import com.wit.unifesta.data.repository.UserSchoolRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
-class UserServiceImplTest {
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+@Transactional
+public class UserServiceImplTest {
 
     @Autowired
     UserRepository userRepository;
@@ -21,13 +29,16 @@ class UserServiceImplTest {
     UserServiceImpl userService = new UserServiceImpl(userRepository, userSchoolRepository, schoolRepository);
 
     @Test
-    void getUser() {
+    public void getUser() {
         // given
-        // UserDTO userDTO = new UserDTO(1L, "김태헌", "123123", "taehuen7757@gmail.com");
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUsername("김태헌");
+
         // when
-//        UserResponseDTO user = userService.getUser(1L);
-//        // then
-//        assertThat(user.getId()).isEqualTo(1L);
+        UserResponseDTO userResponseDTO = userService.saveUser(userDTO);
+
+        // then
+        //Assertions.assertEquals(userDTO.getId(), userRepository.findById(userResponseDTO.getId()));
     }
 
     @Test

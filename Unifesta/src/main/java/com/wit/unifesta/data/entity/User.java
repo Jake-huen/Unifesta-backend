@@ -27,13 +27,11 @@ public class User {
 
     private String email; // 이메일
 
-    // private String sociallogin; // 소셜 로그인 TODO: 나중에 SocialLogin Table로 바꿔주기
-
     @OneToMany(mappedBy = "user")
     private List<UserSchool> userSchools = new ArrayList<UserSchool>();
 
-    @OneToMany(mappedBy = "user")
-    private List<FestivalReview> festivalReviews = new ArrayList<FestivalReview>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UserFestivalReview> userFestivalReviews = new ArrayList<>();
 
     public User(){}
 
