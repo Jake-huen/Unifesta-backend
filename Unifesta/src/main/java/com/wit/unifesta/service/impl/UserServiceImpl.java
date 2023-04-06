@@ -54,6 +54,7 @@ public class UserServiceImpl implements UserService {
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
+        user.setSns(userDTO.getSociallogin());
 
         User savedUser = userRepository.save(user);
         UserResponseDTO userResponseDTO = new UserResponseDTO();
@@ -61,20 +62,7 @@ public class UserServiceImpl implements UserService {
         userResponseDTO.setUsername(savedUser.getUsername());
         userResponseDTO.setEmail(savedUser.getEmail());
         userResponseDTO.setPassword(savedUser.getPassword());
-
-        return userResponseDTO;
-    }
-
-    @Override
-    @Transactional
-    public UserResponseDTO changeUserName(Long id, String username) throws Exception {
-        User changedUser = userRepository.getReferenceById(id);
-
-        UserResponseDTO userResponseDTO = new UserResponseDTO();
-        userResponseDTO.setId(changedUser.getId());
-        userResponseDTO.setEmail(changedUser.getEmail());
-        userResponseDTO.setPassword(changedUser.getPassword());
-        userResponseDTO.setUsername(changedUser.getUsername());
+        userResponseDTO.setSns(savedUser.getSns());
 
         return userResponseDTO;
     }

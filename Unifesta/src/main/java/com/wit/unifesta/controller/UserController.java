@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
+@CrossOrigin(origins = {"https://unifesta-frontend.vercel.app/", "http://localhost:3000"})
 @RequestMapping("/user")
 public class UserController {
 

@@ -27,6 +27,8 @@ public class User {
 
     private String email; // 이메일
 
+    private String sns; // 어떤 소셜 로그인인지
+
     @OneToMany(mappedBy = "user")
     private List<UserSchool> userSchools = new ArrayList<UserSchool>();
 

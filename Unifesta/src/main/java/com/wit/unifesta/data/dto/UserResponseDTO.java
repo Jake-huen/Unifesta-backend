@@ -8,14 +8,17 @@ public class UserResponseDTO {
     private String username;
     private String password;
     private String email;
+    private String sns;
 
-    public UserResponseDTO() {}
+    public UserResponseDTO() {
+    }
 
-    public UserResponseDTO(Long id, String username, String password, String email) {
+    public UserResponseDTO(Long id, String username, String password, String email, String sns) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.sns = sns;
     }
 
     public Long getId() {
@@ -48,6 +51,14 @@ public class UserResponseDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSns() {
+        return sns;
+    }
+
+    public void setSns(String sns) {
+        this.sns = sns;
     }
 
     @Override

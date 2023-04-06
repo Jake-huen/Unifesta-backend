@@ -6,6 +6,8 @@ import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.data.repository.UserRepository;
 import com.wit.unifesta.service.LoginService;
+import com.wit.unifesta.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -14,13 +16,10 @@ import java.net.URL;
 import java.net.http.HttpHeaders;
 
 @Service
+@RequiredArgsConstructor
 public class LoginServiceImpl implements LoginService {
 
     private final UserRepository userRepository;
-
-    public LoginServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public String getKakaoAccessToken(String code) throws IOException {
@@ -38,7 +37,7 @@ public class LoginServiceImpl implements LoginService {
         StringBuilder sb = new StringBuilder();
         sb.append("grant_type=authorization_code");
         sb.append("&client_id=60136aeba56bd4e6caf4c6afe67d9ed9"); // TODO REST_API_KEY 입력
-        sb.append("&redirect_uri=https://unifesta-frontend.vercel.app/Kakaologin"); // TODO 인가코드 받은 redirect_uri 입력
+        sb.append("&redirect_uri=http://localhost:3000/Kakaologin"); // TODO 인가코드 받은 redirect_uri 입력
         sb.append("&code=" + code);
         bw.write(sb.toString());
         bw.flush();
@@ -104,10 +103,10 @@ public class LoginServiceImpl implements LoginService {
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
 
-            int id = element.getAsJsonObject().get("id").getAsInt();
+            String id = element.getAsJsonObject().get("id").getAsString();
             boolean hasEmail = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("has_email").getAsBoolean();
             String email = "";
-            if(hasEmail){
+            if (hasEmail) {
                 email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email").getAsString();
             }
 
@@ -117,11 +116,9 @@ public class LoginServiceImpl implements LoginService {
             br.close();
 
             UserDTO userDTO = new UserDTO();
-            Long allUsers = userRepository.count();
-            userDTO.setId(allUsers+1);
-            userDTO.setUsername(email);
+            userDTO.setUsername(id);
             userDTO.setEmail(email);
-            userDTO.setPassword("123123");
+            userDTO.setPassword("kakao");
             return userDTO;
 
         } catch (IOException e) {

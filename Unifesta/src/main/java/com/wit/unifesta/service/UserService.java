@@ -13,8 +13,6 @@ public interface UserService {
 
     UserResponseDTO saveUser(UserDTO userDto);
 
-    UserResponseDTO changeUserName(Long id, String username) throws Exception;
-
     UserResponseDTO updateUser(UserDTO userDTO);
 
     void deleteUser(Long id) throws Exception;

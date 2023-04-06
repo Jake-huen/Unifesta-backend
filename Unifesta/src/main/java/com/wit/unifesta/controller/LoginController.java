@@ -4,6 +4,7 @@ import com.wit.unifesta.data.dto.UserDTO;
 import com.wit.unifesta.data.dto.UserResponseDTO;
 import com.wit.unifesta.service.LoginService;
 import com.wit.unifesta.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,20 +16,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;
 
 @Controller
-@CrossOrigin(origins = "https://unifesta-frontend.vercel.app/")
+@CrossOrigin(origins = {"https://unifesta-frontend.vercel.app/", "http://localhost:3000"})
+@RequiredArgsConstructor
 public class LoginController {
     private final LoginService loginService;
     private final UserService userService;
 
-    public LoginController(LoginService loginService, UserService userService) {
-        this.loginService = loginService;
-        this.userService = userService;
-    }
-
     @GetMapping("/login/kakao") // 카카오 로그인
     public ResponseEntity<UserDTO> kakoLogin(@RequestParam String code) throws IOException {
         String accessToken = loginService.getKakaoAccessToken(code);
+        System.out.println("accessToken = " + accessToken);
         UserDTO userDTO = loginService.getUserInfo(accessToken);
+        System.out.println("userDTO = " + userDTO);
         userService.saveUser(userDTO);
 
         return ResponseEntity.status(HttpStatus.OK).body(userDTO);
